@@ -9,6 +9,9 @@ description = "Reproducible benchmark assets for legal relation and triple extra
 requires-python = ">=3.11"
 dependencies = []
 
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
 [project.scripts]
 build-hohfeld = "re_te_benchmark.cli:build_main"
 audit-hohfeld = "re_te_benchmark.cli:audit_main"

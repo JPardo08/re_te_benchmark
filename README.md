@@ -16,6 +16,20 @@ TERESIA mREBEL HUMAN VALIDATED
 These resources share packaging conventions but **must not** be mixed into a
 single TE ontology or scored as one Gold set.
 
+## Development environment
+
+The canonical development environment is Python 3.12 in the globally stored
+Conda named environment `re_te_benchmark_312`. The package continues to support
+Python 3.11 or newer.
+
+```bash
+conda create -n re_te_benchmark_312 python=3.12 -y
+conda activate re_te_benchmark_312
+python -m pip install --upgrade pip
+python -m pip install -e ".[dev]"
+pytest
+```
+
 ## Hohfeld Gold (P0)
 
 The original Gold is 95 typed source annotations. It is not equivalent to the
@@ -67,7 +81,7 @@ No package installation or non-stdlib runtime dependency is required.
 ```bash
 python3 scripts/audit_hohfeld.py
 python3 scripts/audit_silver.py
-python3 -m unittest discover -s tests -t .
+pytest
 ```
 
 ## Outputs
