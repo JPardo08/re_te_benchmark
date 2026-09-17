@@ -115,7 +115,7 @@ condition's normative state.
 | relation labels | FORBIDDEN | REQUIRED | REQUIRED | REQUIRED | AVAILABLE | ORIGINAL_DESIGN | C1 is exactly Duty, Right, Privilege, NoRight. |
 | relation definitions | FORBIDDEN | FORBIDDEN | REQUIRED | REQUIRED | NOT_AVAILABLE | ORIGINAL_DESIGN; EXTERNAL_AUTHORITATIVE | No defensible local definitions are frozen. |
 | entity-type vocabulary | FORBIDDEN | FORBIDDEN | REQUIRED | REQUIRED | AVAILABLE | ORIGINAL_DESIGN | LegalAgent, LegalEntity, LegalConcept occur in original signature metadata. |
-| argument roles | FORBIDDEN | FORBIDDEN | REQUIRED | REQUIRED | PARTIAL | ORIGINAL_DESIGN; EXTERNAL_AUTHORITATIVE | e1/e2 identifiers exist; authoritative role semantics remain unresolved. |
+| argument roles | FORBIDDEN | FORBIDDEN | REQUIRED | REQUIRED | PARTIAL | ORIGINAL_DESIGN; EXTERNAL_AUTHORITATIVE | e1/e2 and MissingE1/MissingE2 identifiers exist; authoritative role semantics remain unresolved, and e1 is not presumed to be a privileged bearer/subject. |
 | relation signatures | FORBIDDEN | FORBIDDEN | OPTIONAL | OPTIONAL | UNRESOLVED | ORIGINAL_DESIGN; EXTERNAL_AUTHORITATIVE | Five Gold combinations are observed, not proven closed-world constraints. |
 | domain constraints | FORBIDDEN | FORBIDDEN | OPTIONAL | OPTIONAL | UNRESOLVED | ORIGINAL_DESIGN; EXTERNAL_AUTHORITATIVE | BRAT grids and Gold observations are insufficient as axioms. |
 | range constraints | FORBIDDEN | FORBIDDEN | OPTIONAL | OPTIONAL | UNRESOLVED | ORIGINAL_DESIGN; EXTERNAL_AUTHORITATIVE | BRAT grids and Gold observations are insufficient as axioms. |
@@ -161,12 +161,16 @@ including combinations absent from Gold. It MUST NOT be interpreted as formal
 ontology axioms or normative C2 domain/range knowledge without independent
 evidence.
 
-### D. `MissingE2`, `comp`, and `mod`
+### D. `MissingE1`, `MissingE2`, `comp`, and `mod`
 
 These are annotation-design constructs and evidence/provenance fields.
-Knowledge that a role or concept exists is distinct from concrete annotated
-values. Independently justified role semantics may enter C2/C3; concrete Gold
-`MissingE2`, complement, modifier, or trigger content MUST NOT be exposed.
+The existence of each role or concept is `ORIGINAL_DESIGN` and is distinct from
+its concrete annotated values, which are `OBSERVED_IN_GOLD`. Independently
+justified role semantics may enter C2/C3; concrete Gold `MissingE1`,
+`MissingE2`, complement, modifier, or trigger content MUST NOT be exposed in
+any C0–C3 conditioning payload.
+Neither the existence nor the ordering of these constructs establishes that
+`e1` is a privileged bearer or subject.
 
 ### E. Silver
 
@@ -187,7 +191,7 @@ model identity/revision reporting and MUST NOT be reclassified as C1–C3 input.
 - Entity-type labels currently known: `LegalAgent`, `LegalEntity`,
   `LegalConcept`.
 - Annotation constructs currently known: `e1`, `e2`, `rel`, `comp`, `mod`,
-  `MissingE2`, `RelationType`, and `RelationSignature`.
+  `MissingE1`, `MissingE2`, `RelationType`, and `RelationSignature`.
 - Empirically observed signatures: `LegalAgent-LegalEntity`,
   `LegalAgent-LegalAgent`, `LegalEntity-LegalAgent`,
   `LegalEntity-LegalEntity`, and `LegalAgent-LegalConcept`.

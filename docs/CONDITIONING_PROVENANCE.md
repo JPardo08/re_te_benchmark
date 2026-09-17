@@ -53,6 +53,8 @@ rationale.
 | concrete comp values | Annotated thematic/complement strings | Individual Gold annotations | same as above; canonical copy in `datasets/teresia_hohfeld/canonical/annotations.jsonl` | OBSERVED_IN_GOLD | NO | NO | NO | HIGH | EXCLUDE | Concrete values are test examples. |
 | mod role/concept | Modifier annotation construct | Original tagged annotation format | `estatuto_goldstandard@8e22ead...:data/old/rels` | ORIGINAL_DESIGN | NO | CONDITIONAL | CONDITIONAL | MEDIUM | ROLE_ONLY | The role exists, but authoritative semantics are not frozen. |
 | concrete mod values | Individual modifier strings, including the observed rare value | Individual Gold annotations | same as above; canonical copy in `datasets/teresia_hohfeld/canonical/annotations.jsonl` | OBSERVED_IN_GOLD | NO | NO | NO | HIGH | EXCLUDE | Concrete values are test examples and may reveal annotation decisions. |
+| MissingE1 role/concept | Metadata construct for a non-inline first participant | Original tagged annotation format | `estatuto_goldstandard@8e22ead...:data/old/rels` | ORIGINAL_DESIGN | NO | CONDITIONAL | CONDITIONAL | MEDIUM | ROLE_ONLY | Existence is design knowledge; exact semantics and scoring policy remain incomplete, and the construct does not establish e1 as a privileged bearer or subject. |
+| concrete MissingE1 values | Gold strings recorded outside inline spans | Individual Gold annotations | `estatuto_goldstandard@8e22ead...:data/old/rels` | OBSERVED_IN_GOLD | NO | NO | NO | HIGH | EXCLUDE | Concrete values are Gold content and MUST NOT be exposed. |
 | MissingE2 role/concept | Metadata construct for a non-inline second participant | Original tagged annotation format | `estatuto_goldstandard@8e22ead...:data/old/rels` | ORIGINAL_DESIGN | NO | CONDITIONAL | CONDITIONAL | MEDIUM | ROLE_ONLY | Existence is design knowledge; exact semantics and scoring policy remain incomplete. |
 | concrete MissingE2 values | Gold strings recorded outside inline spans | Individual Gold annotations | same as above; canonical copy in `datasets/teresia_hohfeld/canonical/annotations.jsonl` | OBSERVED_IN_GOLD | NO | NO | NO | HIGH | EXCLUDE | Concrete values are Gold content and MUST NOT be exposed. |
 | rel role | Inline surface-relation marker | Original tagged annotation format | `estatuto_goldstandard@8e22ead...:data/old/rels` | ORIGINAL_DESIGN | NO | CONDITIONAL | CONDITIONAL | MEDIUM | ROLE_ONLY | The role may be documented after semantics are frozen; values remain excluded. |
@@ -88,8 +90,8 @@ resolution are documented. Silence is not evidence of permission.
    payload sources.
 2. Gold counts, co-occurrences, inferred signatures, lexical lists, and aliases
    are `DERIVED_FROM_GOLD` even if produced by deterministic code.
-3. Role-level knowledge about `comp`, `mod`, or `MissingE2` is separable from
-   concrete annotated values.
+3. Role-level knowledge about `comp`, `mod`, `MissingE1`, or `MissingE2` is
+   separable from concrete annotated values.
 4. Silver accepted examples remain model-dependent and outside all main C0–C3
    payloads.
 5. BRAT configuration and the unrelated terminology JSON-LD cannot be relabeled
