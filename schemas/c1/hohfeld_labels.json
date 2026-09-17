@@ -1,0 +1,16 @@
+{
+  "id": "hohfeld_labels",
+  "labels": [
+    "Duty",
+    "Right",
+    "Privilege",
+    "NoRight"
+  ],
+  "provenance": {
+    "field": "RelationType",
+    "relative_path": "data/old/rels",
+    "repository": "estatuto_goldstandard"
+  },
+  "schema_condition": "C1",
+  "version": "1.0.0"
+}

@@ -1,0 +1,1571 @@
+{
+  "artifacts": [
+    {
+      "records": 95,
+      "relative_path": "datasets/teresia_hohfeld/canonical/annotations.jsonl",
+      "role": "canonical_annotations",
+      "sha256": "add825203ea06a5dcb3a30320e1b35fa3643270703a0395e92815ab2ea49ee2d"
+    },
+    {
+      "records": 36,
+      "relative_path": "datasets/teresia_hohfeld/canonical/documents.jsonl",
+      "role": "canonical_documents",
+      "sha256": "a9978064c7323ba89d2e9f73bc5963ffeea6dbae5b051dfa1043ae855c11b259"
+    },
+    {
+      "records": 1,
+      "relative_path": "datasets/teresia_hohfeld/manifests/historical_regression.json",
+      "role": "historical_regression",
+      "sha256": "cae8c0bceccae578acf8a12aaece8dcb04651fcbc580d3ae86111693d6451b98"
+    },
+    {
+      "records": 1,
+      "relative_path": "datasets/teresia_hohfeld/manifests/statistics.json",
+      "role": "statistics",
+      "sha256": "3e3766e3de4af03d46520a40e2d86836f4d8d69be5608ad8dea0a87c5a598714"
+    },
+    {
+      "records": 65,
+      "relative_path": "datasets/teresia_hohfeld/views/sentence_aligned/annotations.jsonl",
+      "role": "sentence_aligned",
+      "sha256": "d090da1b493868cc6d6d2760efa14bd563785530dd822500d46dffe789b7a40c"
+    },
+    {
+      "records": 41,
+      "relative_path": "datasets/teresia_hohfeld/views/span_complete/annotations.jsonl",
+      "role": "span_complete",
+      "sha256": "8a2c2ea19d2f7e8d6a954c03badb0235d0cdcc338160e947c862d871e3519941"
+    }
+  ],
+  "benchmark_id": "teresia_hohfeld",
+  "benchmark_version": "0.1.0",
+  "builder": {
+    "commit": "UNCOMMITTED",
+    "repository": "re_te_benchmark"
+  },
+  "content_metadata": {
+    "ordering": "numeric article id, source block order, historical projection row order",
+    "timestamps_in_content": false
+  },
+  "counts": {
+    "annotations": 95,
+    "argument_patterns": {
+      "e1+comp+MissingE2": 25,
+      "e1+comp_without_MissingE2": 5,
+      "e1+e2": 6,
+      "e1+e2+comp": 53,
+      "e1+e2+comp+mod": 1,
+      "e2+comp_without_e1": 5
+    },
+    "benchmark_id": "teresia_hohfeld",
+    "benchmark_version": "0.1.0",
+    "document_level": {
+      "complete_te": 85,
+      "partial_te": 10
+    },
+    "documents": 36,
+    "eligibility_counts": {
+      "argument_level": 95,
+      "complete_triplet_strict_inline": 60,
+      "complete_triplet_with_missing_e2": 85,
+      "document_level_te": 85,
+      "relation_type": 95,
+      "schema_type": 95,
+      "sentence_projection": 65,
+      "sentence_span": 41,
+      "span_level_original": 60,
+      "textual_supportedness": 95
+    },
+    "projections": {
+      "historically_parser_excluded": 5,
+      "sentence_aligned": 65,
+      "span_complete": 41,
+      "unmatched_parseable_original": 25
+    },
+    "relation_distribution": {
+      "Duty": 49,
+      "NoRight": 5,
+      "Privilege": 4,
+      "Right": 37
+    }
+  },
+  "schema": {
+    "id": "hohfeld_labels",
+    "relative_path": "schemas/c1/hohfeld_labels.json",
+    "sha256": "c3e1950ed8665b3ef73ac3ba74ec9f2853e871406046e908141d7beccf05f170",
+    "version": "1.0.0"
+  },
+  "sources": [
+    {
+      "commit": "8e22ead8359515164979e85e9fe1f3741f838826",
+      "files": [
+        {
+          "bytes": 10086,
+          "relative_path": "data/old/old_articles/articulo_11.txt",
+          "sha256": "7bd84c30ef6af4dc76491f40e50a320b2df5f2171898da9d9639cdeb94e4cfda"
+        },
+        {
+          "bytes": 13418,
+          "relative_path": "data/old/old_articles/articulo_12.txt",
+          "sha256": "4084a3845ab06dc1fb53ee1fdc88de931e07613b93d5750c2d74f97344024ffa"
+        },
+        {
+          "bytes": 7987,
+          "relative_path": "data/old/old_articles/articulo_15.txt",
+          "sha256": "f8a3fd8b058a07345803d8c625dbd27692b9d280916d47d27d84360526a4e0e1"
+        },
+        {
+          "bytes": 3096,
+          "relative_path": "data/old/old_articles/articulo_17.txt",
+          "sha256": "ff250d791b5c11a5ad815c7a6ae9b82f58707864fc7a08c59f95d1410f011f09"
+        },
+        {
+          "bytes": 2678,
+          "relative_path": "data/old/old_articles/articulo_19.txt",
+          "sha256": "13583b5f7615191927abc5fda17f487ce84faa2fdbb93782c3ae04317e2041c9"
+        },
+        {
+          "bytes": 1932,
+          "relative_path": "data/old/old_articles/articulo_20.txt",
+          "sha256": "5616ab93219cfb350a6eb898e8e4ca8193b365c2c75b1cbf02a888486ede86b8"
+        },
+        {
+          "bytes": 1638,
+          "relative_path": "data/old/old_articles/articulo_21.txt",
+          "sha256": "5748bd071ec1904b8c237c750159b050bd57f7f066c35d13ea707d00f63ca428"
+        },
+        {
+          "bytes": 2124,
+          "relative_path": "data/old/old_articles/articulo_23.txt",
+          "sha256": "2da7bc4cc2ccceba2402cdb76e45fe6e01a5bfb7ddc4a8e568c6e36c54faf99a"
+        },
+        {
+          "bytes": 1689,
+          "relative_path": "data/old/old_articles/articulo_28.txt",
+          "sha256": "b5bfb29349126ee205d265813a739b5747b9c878281dd5e09b707771e6b50e10"
+        },
+        {
+          "bytes": 8961,
+          "relative_path": "data/old/old_articles/articulo_33.txt",
+          "sha256": "b46ed3966f927ed117d9c3a2116524bc85ab0bc7cae59022a4014a618b770e4d"
+        },
+        {
+          "bytes": 6348,
+          "relative_path": "data/old/old_articles/articulo_34.txt",
+          "sha256": "75dc47b48839c8a80b0592f41607f1136f1f13a8a00a77f4864d853c60fd3317"
+        },
+        {
+          "bytes": 4053,
+          "relative_path": "data/old/old_articles/articulo_36.txt",
+          "sha256": "4ddc13c5d8709309b1137d9df5dc38307851c4f402bec8a50497527334209048"
+        },
+        {
+          "bytes": 10062,
+          "relative_path": "data/old/old_articles/articulo_37.txt",
+          "sha256": "861bd4ba1626422f6a9a787a5903a48830efbd254d7a6dd97efec31356cdd209"
+        },
+        {
+          "bytes": 2244,
+          "relative_path": "data/old/old_articles/articulo_39.txt",
+          "sha256": "29131b56f81c86152645a266be6aa08c40f049987900f8ddec84d617d3f269ed"
+        },
+        {
+          "bytes": 10122,
+          "relative_path": "data/old/old_articles/articulo_40.txt",
+          "sha256": "7c8adc57c2e26c4d7de1928df7c372d39336c5f71b15e2f52a54afb137a190a2"
+        },
+        {
+          "bytes": 11381,
+          "relative_path": "data/old/old_articles/articulo_41.txt",
+          "sha256": "9de716b8f302feb4630e626f77094ce6841612b3e38208a8d8628be5237c805d"
+        },
+        {
+          "bytes": 4752,
+          "relative_path": "data/old/old_articles/articulo_42.txt",
+          "sha256": "ebbdb5dc56e6d08eb14982b14cfffd85a6922d3c92fb7ed853b23bedcdeb0b5a"
+        },
+        {
+          "bytes": 3770,
+          "relative_path": "data/old/old_articles/articulo_46.txt",
+          "sha256": "f858a5864630d54d0147e44f83269263b838c120c40456261ed806ebe65b747a"
+        },
+        {
+          "bytes": 8047,
+          "relative_path": "data/old/old_articles/articulo_47.txt",
+          "sha256": "aeee90f822fc80b68a6e809ab689a0a4ee3dee620b531c43677bcba5d0ba25c3"
+        },
+        {
+          "bytes": 8496,
+          "relative_path": "data/old/old_articles/articulo_48.txt",
+          "sha256": "fdf48a4912ae0e670f71ec1ef5a8f43faa4180d4e6b9c9095c56faa605834135"
+        },
+        {
+          "bytes": 3897,
+          "relative_path": "data/old/old_articles/articulo_49.txt",
+          "sha256": "535157cfc864434d9a14f37271fadb687350cde9e795172b9bc3b509869c496c"
+        },
+        {
+          "bytes": 868,
+          "relative_path": "data/old/old_articles/articulo_50.txt",
+          "sha256": "1c85020af9e73515822ad09d049c8221f7fcc41f6a06f79a9aefde39319982ca"
+        },
+        {
+          "bytes": 15219,
+          "relative_path": "data/old/old_articles/articulo_51.txt",
+          "sha256": "56f905291574ad8ce1f2d5f6cdad2f36627565c9a81df488f2f8d92ada73c2cd"
+        },
+        {
+          "bytes": 1986,
+          "relative_path": "data/old/old_articles/articulo_52.txt",
+          "sha256": "f51865554bbf6b79b4289fa8a01b6320bd80454cc22d3732e19097b07d08ef72"
+        },
+        {
+          "bytes": 3917,
+          "relative_path": "data/old/old_articles/articulo_55.txt",
+          "sha256": "2b8ba9ba263d4b41b3868a14add0634ea2ba5947c7cac9e8d8f1f04344e2e781"
+        },
+        {
+          "bytes": 2257,
+          "relative_path": "data/old/old_articles/articulo_56.txt",
+          "sha256": "db9eb8aeaec962d7353eaeb6fd19211541eb31403c23cec4099858ad7309ab34"
+        },
+        {
+          "bytes": 838,
+          "relative_path": "data/old/old_articles/articulo_6.txt",
+          "sha256": "47da5b52278b0c5bdffc2e8d935d0420d2a0695cab62ac5c0a6b58781a4498b4"
+        },
+        {
+          "bytes": 304,
+          "relative_path": "data/old/old_articles/articulo_61.txt",
+          "sha256": "45162032925a748928f8ae276907b22cb00879ac8e2c060ca25a1bd065a59510"
+        },
+        {
+          "bytes": 8403,
+          "relative_path": "data/old/old_articles/articulo_64.txt",
+          "sha256": "d6d162c5189fa6069195f5ddbe29669f24bd1d5e18fe68fdfd4e2e0ceacb4a84"
+        },
+        {
+          "bytes": 2274,
+          "relative_path": "data/old/old_articles/articulo_65.txt",
+          "sha256": "d5da3b57afcabf3c763fc7cb3732d6afa2051c253325eeb23d9a5a0445f359a7"
+        },
+        {
+          "bytes": 5651,
+          "relative_path": "data/old/old_articles/articulo_67.txt",
+          "sha256": "c31ea5360a94c51b97cd13e54e2e7803b386d54bc9661d43f950c89bd45bfb71"
+        },
+        {
+          "bytes": 3840,
+          "relative_path": "data/old/old_articles/articulo_8.txt",
+          "sha256": "2b7813f2f865af513a7df523d83e429e7717a15db248e06329574da74c356eb8"
+        },
+        {
+          "bytes": 1905,
+          "relative_path": "data/old/old_articles/articulo_89.txt",
+          "sha256": "4b91992a7db99115dc77e5df5496f834fdb930f20f4f764d041e4a8517ab3aba"
+        },
+        {
+          "bytes": 1003,
+          "relative_path": "data/old/old_articles/articulo_9.txt",
+          "sha256": "2aea35bb12d19a3bc232241a94018da9c0d77cb0ff1fe82328c87f55dba1b172"
+        },
+        {
+          "bytes": 2154,
+          "relative_path": "data/old/old_articles/articulo_90.txt",
+          "sha256": "799c6d505bbf862e713ac31f867bdd9fdbdc166d288222794e205e38e829a0d7"
+        },
+        {
+          "bytes": 38430,
+          "relative_path": "data/old/old_articles/articulo_92.txt",
+          "sha256": "1e98d8b1f12d2dd54d6e16f35fe13858bda5bd0951327baf16b2525263ef54aa"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_1.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_10.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1647,
+          "relative_path": "data/old/rels/articulo_11.txt",
+          "sha256": "880217744e3fc95047e3cb60303e14d2bc85f8a65533ea4117ebad807bf8dd74"
+        },
+        {
+          "bytes": 2455,
+          "relative_path": "data/old/rels/articulo_12.txt",
+          "sha256": "c5798667b97149bb5bcb74d7f579cab3108ca6255bb0d3efbe22e7228b76e442"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_13.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_14.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 854,
+          "relative_path": "data/old/rels/articulo_15.txt",
+          "sha256": "88015913d36df2efe5424cddff51ed4a7a3ccae1b8548da96ac25505f2497a64"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_16.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 356,
+          "relative_path": "data/old/rels/articulo_17.txt",
+          "sha256": "82c2b7d1f96693e100a04066345616003c593c9e52b6f650ef77740a3743f163"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_18.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 973,
+          "relative_path": "data/old/rels/articulo_19.txt",
+          "sha256": "f29baae474c205794c0fbaf7a63980961f9582ce3cfc37d4cf927ae4da654882"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_2.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1084,
+          "relative_path": "data/old/rels/articulo_20.txt",
+          "sha256": "699c9103a070772e201bb98f273eb67c06ec45487613b3987410fc200a80ced0"
+        },
+        {
+          "bytes": 461,
+          "relative_path": "data/old/rels/articulo_21.txt",
+          "sha256": "41a591f6518964acfb3e30f2d875cbd981298eb50e5d3ae5276a1e4873f0f0c1"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_22.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 381,
+          "relative_path": "data/old/rels/articulo_23.txt",
+          "sha256": "34625ab27f012cca6e65bea800ec638a8a0ee5e7bd017d122d772bc5c8a06e4c"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_24.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_25.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_26.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_27.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 910,
+          "relative_path": "data/old/rels/articulo_28.txt",
+          "sha256": "315daf34ce8aa9fe99f8b961e387d22327786d163376e6367a0f7ef2c986a110"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_29.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_3.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_30.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_31.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_32.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1478,
+          "relative_path": "data/old/rels/articulo_33.txt",
+          "sha256": "a14b1d57674791c887ed314a5f74975d86f053fcbb846340558387d320f86c00"
+        },
+        {
+          "bytes": 1152,
+          "relative_path": "data/old/rels/articulo_34.txt",
+          "sha256": "22368e67f9cf6afbdcae9e7ab37dde4894bad5030096bba4749ca8266167b959"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_35.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1089,
+          "relative_path": "data/old/rels/articulo_36.txt",
+          "sha256": "b1a394b95a22445829eed8cbbadef91acf4a6447d4805c7dd94755c7fd120d0b"
+        },
+        {
+          "bytes": 625,
+          "relative_path": "data/old/rels/articulo_37.txt",
+          "sha256": "d115b0c9f0edbe30e724238e608ee1705b5cbc409b97559f8fb82076e623049e"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_38.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1120,
+          "relative_path": "data/old/rels/articulo_39.txt",
+          "sha256": "c21377d0c83103a01a4198e051a1eb679b16d89419d22b378b83f3443a045b8f"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_4.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1191,
+          "relative_path": "data/old/rels/articulo_40.txt",
+          "sha256": "7968ca8c04523efce8a5baded8a432e6406f7b69fb44de96e0697be2d8ac2c4d"
+        },
+        {
+          "bytes": 998,
+          "relative_path": "data/old/rels/articulo_41.txt",
+          "sha256": "af1d872211c78502832346357faf48fb1ec33b3d9ce1a7a767414a8610ec6f92"
+        },
+        {
+          "bytes": 1957,
+          "relative_path": "data/old/rels/articulo_42.txt",
+          "sha256": "c37cd5965f6faac962f6da3e7e28915f054ebc9bd9d3a3cd41fd1ab0dbea6d79"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_43.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_44.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_45.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1189,
+          "relative_path": "data/old/rels/articulo_46.txt",
+          "sha256": "0cc2b355e44dd11d0548a1e87c0bd27329ae43f9293701913986e860af04390c"
+        },
+        {
+          "bytes": 1433,
+          "relative_path": "data/old/rels/articulo_47.txt",
+          "sha256": "034c14435007aa6809f572ff165da189c2f30768f24135fa5295842ea3e25460"
+        },
+        {
+          "bytes": 662,
+          "relative_path": "data/old/rels/articulo_48.txt",
+          "sha256": "4a38ac70577b3b0c4b358e5cef41f3da77fd26061e6feb8c0abcd815439fef0f"
+        },
+        {
+          "bytes": 1353,
+          "relative_path": "data/old/rels/articulo_49.txt",
+          "sha256": "2001b72d0e55a77c50a9b2e422a13f8683b35446ee81be756f9bec1c0381a3b6"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_5.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 220,
+          "relative_path": "data/old/rels/articulo_50.txt",
+          "sha256": "7d1cded5e739a17d299716e87c4a4b09cfdda6dd13594db6665418e46fcf2386"
+        },
+        {
+          "bytes": 1619,
+          "relative_path": "data/old/rels/articulo_51.txt",
+          "sha256": "ef2cb4c948fdd3d0a47297296dc9dd7234448e44c0bbaa7c6bdf0ffccdcc808d"
+        },
+        {
+          "bytes": 543,
+          "relative_path": "data/old/rels/articulo_52.txt",
+          "sha256": "0bd3d870b74dffc56c3efdcef170d7205c661c91f84bda7c1ae2200e8ccce225"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_53.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_54.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 552,
+          "relative_path": "data/old/rels/articulo_55.txt",
+          "sha256": "5e5f207f3b01d36cdecd3b5e8f3651e573fc59e9232595a77f3f44cbfd87dcc0"
+        },
+        {
+          "bytes": 467,
+          "relative_path": "data/old/rels/articulo_56.txt",
+          "sha256": "e663746601ef731c4fc18a263c0550072d34ee5a5f30e5b6b126aeaaeb55e676"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_57.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_58.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_59.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 184,
+          "relative_path": "data/old/rels/articulo_6.txt",
+          "sha256": "3e8b776c4ce0c26b8995766f4c2d822ee6b3df261496ab3217a33b089f6b5ee0"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_60.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 339,
+          "relative_path": "data/old/rels/articulo_61.txt",
+          "sha256": "7c0aa566e038b7fd7d3317a40351b3d6de20cdc5ab727fa7d6daecb4c2f9a009"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_62.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_63.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 1598,
+          "relative_path": "data/old/rels/articulo_64.txt",
+          "sha256": "717971fcc7666fa0a8049966dc0e305dc267b752796f8dcbd21dfca56487d920"
+        },
+        {
+          "bytes": 483,
+          "relative_path": "data/old/rels/articulo_65.txt",
+          "sha256": "f01b26667566e2d907ffef64dafa35e75c394c0966d944e378b629e7367d7c1b"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_66.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 989,
+          "relative_path": "data/old/rels/articulo_67.txt",
+          "sha256": "54ba136f29626de1138d01f5873acf7112c67b29cd492913595e128e347f78f9"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_68.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_69.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_7.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_70.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_71.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_72.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_73.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_74.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_75.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_76.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_77.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_78.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_79.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 2365,
+          "relative_path": "data/old/rels/articulo_8.txt",
+          "sha256": "d4e0ac116ac6b716963d935691c9d85e2464ba31d2d0f694397735f52cc64f41"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_80.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_81.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_82.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_83.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_84.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_85.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_86.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_87.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_88.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 886,
+          "relative_path": "data/old/rels/articulo_89.txt",
+          "sha256": "b122093e8243549041a9570c52225237d612be323817611d9954fb7520ef5b0b"
+        },
+        {
+          "bytes": 593,
+          "relative_path": "data/old/rels/articulo_9.txt",
+          "sha256": "05bc35bd695ffee74618b13b4963c960573c6b55d90497e80ed49f90c7a814d6"
+        },
+        {
+          "bytes": 325,
+          "relative_path": "data/old/rels/articulo_90.txt",
+          "sha256": "7e314acfa055db9ce3c46447d35822c08d07bb42584cfd9e1827291cb7527324"
+        },
+        {
+          "bytes": 0,
+          "relative_path": "data/old/rels/articulo_91.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "bytes": 2741,
+          "relative_path": "data/old/rels/articulo_92.txt",
+          "sha256": "5a430f34152b1634fd28473d89834713ad66a9891138c8e807c2901af31581de"
+        }
+      ],
+      "repository": "estatuto_goldstandard",
+      "role": "authoritative_original_hohfeld_gold",
+      "url": "https://github.com/pmchozas/estatuto_goldstandard.git"
+    },
+    {
+      "commit": "0d79c10bd12def9d6f0120966ede0d609a3fdbd8",
+      "files": [
+        {
+          "bytes": 37165,
+          "relative_path": "code/build_corpus.ipynb",
+          "sha256": "976d75be49f7d8b2aeb67fe1080a0aaaa8b1c3760f9bb64dac9f04bf0ce0aac9"
+        },
+        {
+          "bytes": 372,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_1.txt",
+          "sha256": "6337fbc41922b31fec95de7ce656109f5bffa0a5153871ec1fd5ff01052dea08"
+        },
+        {
+          "bytes": 2013,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_10.txt",
+          "sha256": "1045f214fe809d210b3cd990bf87ec0f29696c533cc92226cf4de84687237352"
+        },
+        {
+          "bytes": 1843,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_100.txt",
+          "sha256": "ea2975fbc182ead6f37ad9ec9205bbf6b466d3fc6693f390001a96cc693f03f5"
+        },
+        {
+          "bytes": 1827,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_102.txt",
+          "sha256": "1fd1cd5963c697972925aaa99f7a14b066a08c900b5b3cfc07ea295992b50d67"
+        },
+        {
+          "bytes": 1855,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_103.txt",
+          "sha256": "2603a4accfa4f88aaf1e8bb063f569d01901167a59f2daa1373ec13b2e569e11"
+        },
+        {
+          "bytes": 1685,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_104.txt",
+          "sha256": "46fcf62a3f88847e0affb0be75aaa121942686820ca7dd3d1c463fd04d5fc392"
+        },
+        {
+          "bytes": 1722,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_105.txt",
+          "sha256": "ca6fea6cd022f6415acfaf813e2bb7c6fb617dc8907c622565764830a39867e6"
+        },
+        {
+          "bytes": 1737,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_106.txt",
+          "sha256": "eab4291350391f9098b83f684da64ea14310a2e30301164e11b38b28776cca79"
+        },
+        {
+          "bytes": 1833,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_107.txt",
+          "sha256": "49301712b1ac054355e3f60e14fdb21d4acb18b1832db7fa4654a78ee0537372"
+        },
+        {
+          "bytes": 1628,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_108.txt",
+          "sha256": "89f1e0ba21b57db61c47878a404efbcc207aa03f1d1b8d0c0421553522a25389"
+        },
+        {
+          "bytes": 1957,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_109.txt",
+          "sha256": "d3b53a20936ab48456726a512c01c87dbe0f243dde56ddaa48dad86e69b22fba"
+        },
+        {
+          "bytes": 1822,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_11.txt",
+          "sha256": "7ff27c60f736617f6758521d474f80b0cfa899337f6cc3829c6952f4078ceb6f"
+        },
+        {
+          "bytes": 1970,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_110.txt",
+          "sha256": "0a742267c73e3ab8e59323c21e1a084df91c81c5da828c22b4493a6f14ae3399"
+        },
+        {
+          "bytes": 1770,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_111.txt",
+          "sha256": "2fb9b5495577b8959e89e0e556b18d7556f03dde89115beef8da8aba8869f086"
+        },
+        {
+          "bytes": 2312,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_112.txt",
+          "sha256": "62df6dbafda2fe079dff00552b69b6516f03897564bc04f2c18a14b3d81cfce0"
+        },
+        {
+          "bytes": 1802,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_113.txt",
+          "sha256": "8aa8376367de106dde36381e4ea99407817b0198d80b7001e4baf8ae126d68b4"
+        },
+        {
+          "bytes": 1701,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_114.txt",
+          "sha256": "3714d5cdacc35eb4ea6b3939b66f2b4e4fbfe690e91793be7cc6bd6cf2453d2b"
+        },
+        {
+          "bytes": 1685,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_115.txt",
+          "sha256": "42ee39219b597499d8c06575684d70505fe60368863113515aa55824de8f0a6a"
+        },
+        {
+          "bytes": 1881,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_116.txt",
+          "sha256": "72bb7f3934e0a116b7a7ffb350c2008359835955027f91c89d624bf8cc20b94d"
+        },
+        {
+          "bytes": 1895,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_119.txt",
+          "sha256": "795c22ba7d0a6bc23ed593bee81c9b4583c40384f95d669261e22f6a6e28b58d"
+        },
+        {
+          "bytes": 367,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_120.txt",
+          "sha256": "9958971d40667d378187d3ee5f69fdd9b1ed8189a2ff37c06b21af525be29469"
+        },
+        {
+          "bytes": 604,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_122.txt",
+          "sha256": "d2921b8f27d6c413bbfb9df41f718e0e2fe7f83bb90eabf2e0dd0f091ee7fcac"
+        },
+        {
+          "bytes": 1814,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_123.txt",
+          "sha256": "187b2ff4d13dfbbeaeef73a3b07c316a57a69bbf697e1512b111a4183f48734a"
+        },
+        {
+          "bytes": 1661,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_124.txt",
+          "sha256": "3e742c7722777a9a294a156d0fb2a7c1d1d2bb965cdc9f183855ff9fe549bb2e"
+        },
+        {
+          "bytes": 1837,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_126.txt",
+          "sha256": "a6a001aa46e01e8d5b03cd75a04eb6e02f4b8231139853a0cf9eb4d121e20850"
+        },
+        {
+          "bytes": 1952,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_127.txt",
+          "sha256": "dfa988e8370d4401ab351aaf5031e554575f8aba6c9c78b284e59d2f39dcd10b"
+        },
+        {
+          "bytes": 2004,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_128.txt",
+          "sha256": "900f519576da39207dce7418f2e67eb66dfb3a05f7c62b74b6d3894181ece1be"
+        },
+        {
+          "bytes": 1737,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_129.txt",
+          "sha256": "3dc4bc52d9d8cb39d51a8ac1c0964616ac79da47cc3cab6efa865accafffb12d"
+        },
+        {
+          "bytes": 1905,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_13.txt",
+          "sha256": "3b907a7772c51c212bb57d0694454a9370e59e8363547fc0bf7f3b7622d9e6ae"
+        },
+        {
+          "bytes": 528,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_131.txt",
+          "sha256": "5de394d70aa998d4b28bd1c67bb8b41b9f23cf6fb99b22c0212598f1d40a7f32"
+        },
+        {
+          "bytes": 2114,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_132.txt",
+          "sha256": "e3a6299569a1cc38d165122b7835d5422d325796ef630397c10c7a8cdcac045f"
+        },
+        {
+          "bytes": 1717,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_133.txt",
+          "sha256": "46c50ab6fe57a8d9cb4ea4eaf6a1bbf5fc192fd162cdacdf68631adf168a8059"
+        },
+        {
+          "bytes": 1911,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_134.txt",
+          "sha256": "ea824f450c0d3721950428b56dc300e5731926d7b68b2c1839d33afdc550f245"
+        },
+        {
+          "bytes": 1915,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_135.txt",
+          "sha256": "72df647da2448e50d4a1dccdd8c1db16640bd706a37978f7158ac86676f5a798"
+        },
+        {
+          "bytes": 1854,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_136.txt",
+          "sha256": "32fa5adde8a1ae79cd5e3d0e8660eec5503d60da1f08e759431471f9702c12f5"
+        },
+        {
+          "bytes": 1628,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_138.txt",
+          "sha256": "0fcf15f66f02e139700aecae8872955ad7151dc5342320d49d2efdd937ae1345"
+        },
+        {
+          "bytes": 1889,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_139.txt",
+          "sha256": "1304f037db8f998eba70b8e61fff9fe12128a2f86e13fdfe53cb4d9da99853cd"
+        },
+        {
+          "bytes": 1765,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_14.txt",
+          "sha256": "c73eba48eed2a9453750ae28c979180651ddd6ba54c3cdd4d6d6300e9507ca2c"
+        },
+        {
+          "bytes": 1487,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_142.txt",
+          "sha256": "61a37ba00c0578279b100ef387503ed38a4dc0f83674f0be0eaa1bb51f944cda"
+        },
+        {
+          "bytes": 1953,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_143.txt",
+          "sha256": "3604d8ef39a7101aaab933c286cdf64228864dede271a87babc1796d101cb77d"
+        },
+        {
+          "bytes": 1795,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_145.txt",
+          "sha256": "28da627f81ab5e5ea30184541a04e2dbf427003306ad9023df0b208c0e57fee2"
+        },
+        {
+          "bytes": 1652,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_147.txt",
+          "sha256": "687b0188a546ef5b1f79163f4b49c84269baef4494ee762fe211142e95d9562c"
+        },
+        {
+          "bytes": 1655,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_15.txt",
+          "sha256": "f31946fbffd2ced5c0612b5cdbcc1c66f853e3db64a15fdee2e79290eb2acc98"
+        },
+        {
+          "bytes": 1845,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_150.txt",
+          "sha256": "d3d2608bb94eb8c69757d66e2e2e8f2ed3335fbf4842db0bf8f3d0e1a16af619"
+        },
+        {
+          "bytes": 1618,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_151.txt",
+          "sha256": "9f201633db265142800b16426a5cd84b3e36bcb1127fe44305dcfd1890d6cdd4"
+        },
+        {
+          "bytes": 1878,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_152.txt",
+          "sha256": "7027063743ab7574e3b82d7d9941219480294914563e138e7199d0d7063b1e4a"
+        },
+        {
+          "bytes": 1780,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_153.txt",
+          "sha256": "3e2ad4f286a6a92af3ea0aa3506de5b9234d9cc2575c3e9bbecf1bdde9c03d6a"
+        },
+        {
+          "bytes": 1566,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_154.txt",
+          "sha256": "b423f8c4fcb665d88b178bd12c320cd814f1a7e2ecae351da88fc41bcc5545ce"
+        },
+        {
+          "bytes": 1918,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_155.txt",
+          "sha256": "2fd33c778f0aa214c4fbd6949164206df34c6a104f0385b22664867f4448ce2e"
+        },
+        {
+          "bytes": 1362,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_156.txt",
+          "sha256": "5d0c989bfa5882dfc9c274ce6535804fea5a5aa4a86a8cc2df4987f8565e495f"
+        },
+        {
+          "bytes": 1644,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_157.txt",
+          "sha256": "172576b08327356b6b771daaa5102473d07ac73b52d95c4c6cfd658e6042c9a2"
+        },
+        {
+          "bytes": 1748,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_158.txt",
+          "sha256": "c042b15fd81991a60ae0d539e796f2307416c3bf2e4aaccb8a4776437c5f3db6"
+        },
+        {
+          "bytes": 1001,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_159.txt",
+          "sha256": "cdefae96b22771209713a914bdb758d360b12d9b90bbec9325d9c1703ec34456"
+        },
+        {
+          "bytes": 1757,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_16.txt",
+          "sha256": "e8b8cfb76acd8daca419ffee52006eae3b5470b165dca28a8288b7a8ec6f2c09"
+        },
+        {
+          "bytes": 1874,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_160.txt",
+          "sha256": "7decf527cc06047067457c70d43f270099aa4299fb6c4a55669d332449860320"
+        },
+        {
+          "bytes": 2003,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_161.txt",
+          "sha256": "01db6385f8d3464ae5d4b699ecd1d7f074ba5d0d0bcc08e1b00debb80d0e17bf"
+        },
+        {
+          "bytes": 1921,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_162.txt",
+          "sha256": "42aecc9e28c4c7c4cb33465757c4c49bcff5285df5a9288d681dcd79a74f6947"
+        },
+        {
+          "bytes": 1918,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_163.txt",
+          "sha256": "cab00b6cb695fe91219237199157e05678264b4e3e26771a267062ecae5080f6"
+        },
+        {
+          "bytes": 1876,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_164.txt",
+          "sha256": "6fb3c506d09c505668ccc6d3898c39fa8aa72a1e83e84e6813fe22509fe2819c"
+        },
+        {
+          "bytes": 1929,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_165.txt",
+          "sha256": "999ad21fc786ddffd362185e972a53c16e44c572cf91c224da504702ed229f6c"
+        },
+        {
+          "bytes": 864,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_167.txt",
+          "sha256": "eda6ee2d6dbda4f6db3eb00451da83213a3eb7eaf1b0e03c09cabbf661ed1ffc"
+        },
+        {
+          "bytes": 1923,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_168.txt",
+          "sha256": "b17f7cb6eb51765f697a4119372b334c57868c2946e34e893cd61174aaffc172"
+        },
+        {
+          "bytes": 1744,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_169.txt",
+          "sha256": "e090cf1bfd77931db1e73920068905413163148aea8819b5278f525ba5487eed"
+        },
+        {
+          "bytes": 1819,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_17.txt",
+          "sha256": "3856adeb5a69809bde9627657aa98ed9224e685bb65b5eb99ec236a842c08c3f"
+        },
+        {
+          "bytes": 1783,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_170.txt",
+          "sha256": "4e40d5bd6e9a378137e32a3f534d32a35fb1e3302da5453d6d4284912e2ecd62"
+        },
+        {
+          "bytes": 1684,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_171.txt",
+          "sha256": "b4aff8376cc4d987f2c86fb5fd9988b037b7f4bfefd53c5dc18c7f01a5c78023"
+        },
+        {
+          "bytes": 2024,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_173.txt",
+          "sha256": "83f88c81ea48ab218e37ddcd64eeb1fd50a83c85826f6a9ea05a60ccbcee865b"
+        },
+        {
+          "bytes": 1728,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_175.txt",
+          "sha256": "ccd1ee4f923ba596288c855bc6f0e86125676c2652ff2442ab2b96b971d91cc8"
+        },
+        {
+          "bytes": 1803,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_178.txt",
+          "sha256": "f35385368a2325530633dbd705f863e6eeb11e34354a97e77b306bd645d45cfb"
+        },
+        {
+          "bytes": 1483,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_179.txt",
+          "sha256": "ce528d60b1e805dbf4cd9631dabc9601316ab301fadadb98ff4c3cb578befc9a"
+        },
+        {
+          "bytes": 1963,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_181.txt",
+          "sha256": "6d14632b8ba3751304253b2cb22200958dd2af9c5decee980f49fb7dcf21197d"
+        },
+        {
+          "bytes": 1838,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_182.txt",
+          "sha256": "9a5c89003c2e562ce4e2930ed24eb6a4e47a9d972b937868fa5254aec4e12b3d"
+        },
+        {
+          "bytes": 1894,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_183.txt",
+          "sha256": "dbe8617ee3b92709e59c70bb16001c2f9b0b896d1cd07e80c8115a05dd719ab5"
+        },
+        {
+          "bytes": 356,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_184.txt",
+          "sha256": "c0d78736cde4a6b3adc48ac0588a9ab7b64a75ae47c7ad47117527277c4b50f7"
+        },
+        {
+          "bytes": 1827,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_185.txt",
+          "sha256": "c5c7f3f3be8537218e91f8e45c6e429b0b3a590e9ca11f3c7dc8ba3dc9830da8"
+        },
+        {
+          "bytes": 1865,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_187.txt",
+          "sha256": "86e04a6dfcb1140a29a8a7d5d671ad2f989e1bf6e0736866f5130864467b544d"
+        },
+        {
+          "bytes": 1934,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_190.txt",
+          "sha256": "ab683d4f6cd3682952d882e6c410cea323ad3173c4d6355fa9b640a7b5cafbf8"
+        },
+        {
+          "bytes": 1653,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_191.txt",
+          "sha256": "f787360ab3e14074af23a0172cc034915ab03a745e28b793ef94f41fa9739214"
+        },
+        {
+          "bytes": 1799,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_193.txt",
+          "sha256": "3fbf25d6dd7318dd47051cc06ad970a4e1afa4b4ee921b339a47203b0e7d8ac3"
+        },
+        {
+          "bytes": 1623,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_194.txt",
+          "sha256": "4ac3f87ad93db0cecc30b3a3e923e0690167397fc6491202dd92e40f3ab073c1"
+        },
+        {
+          "bytes": 826,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_195.txt",
+          "sha256": "f9c27f66f0fb3a4eb3051ce20ded9ce8dea43f9235e70157dfe31c0bd9be7a93"
+        },
+        {
+          "bytes": 1007,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_196.txt",
+          "sha256": "9eaebd804d8e20b27bbd9ebd9237b7b91a7df0c756224edd237f01856704b04d"
+        },
+        {
+          "bytes": 871,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_197.txt",
+          "sha256": "9f7d319696e74c970b7a140e6572e75bc160429176906ebb777db1897e7dc029"
+        },
+        {
+          "bytes": 1882,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_199.txt",
+          "sha256": "ab6a4d2a18eb8e4151fe8014cb462be1e9fec75be6a49da1f9a3e586802fecb4"
+        },
+        {
+          "bytes": 1888,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_2.txt",
+          "sha256": "c0303e17e2745b1f84a74efef35fd3cfe4dcdd6ae1f2e0f22825fe48515e82a9"
+        },
+        {
+          "bytes": 1669,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_20.txt",
+          "sha256": "b2cd467428819b24074b1b856904f958020a0d97d64378df6479fbfe29c84623"
+        },
+        {
+          "bytes": 1908,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_201.txt",
+          "sha256": "d710d0f175de0cc831a2d5c1b23b08c4a0be21239f74bf65b33d51b64d15ee90"
+        },
+        {
+          "bytes": 1800,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_203.txt",
+          "sha256": "9aa3fb5ca885e2bcbc97aeacf258277e62ccb8128032feeb9251069db1cebf5c"
+        },
+        {
+          "bytes": 1536,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_204.txt",
+          "sha256": "7932cb0e5287e8805db388a7fec539bb0f445660af0158c394f9f96a87dbd5f7"
+        },
+        {
+          "bytes": 1774,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_205.txt",
+          "sha256": "5b717c86473a327afded1ce48618b29033d65e2f8fea1c135028317766f09da2"
+        },
+        {
+          "bytes": 1607,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_206.txt",
+          "sha256": "2ae6a344072bba95b4685ae0b1f1d3a796021489cf3470ed7a0c3725b0637b33"
+        },
+        {
+          "bytes": 1841,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_207.txt",
+          "sha256": "1e3833dafa2aaff57c3029af0f75cd6faedbb4451c6317917625bcecdab039c9"
+        },
+        {
+          "bytes": 1947,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_208.txt",
+          "sha256": "6f2ecfa8ac26b3c670793048a0e2676a1f85e629a6aee6000fe73136151e7b25"
+        },
+        {
+          "bytes": 1871,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_21.txt",
+          "sha256": "aacd29e400a9b4ee27732b9aea63400464c335b6566e3fdd9dd23e32fca4c9e4"
+        },
+        {
+          "bytes": 984,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_22.txt",
+          "sha256": "33124d58a32fafc8c3fcc1ca036a04d0840b8ffcb9de3e41659abb1ec91449bf"
+        },
+        {
+          "bytes": 1956,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_23.txt",
+          "sha256": "6d6457cf992b58ea751d3515cf1b50734331657aa1b15bf0a9dfcf6d36c0403d"
+        },
+        {
+          "bytes": 924,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_24.txt",
+          "sha256": "c3e2ad683e236dd68099d3c1ee70f45a2a97f45cf45cac3ff44828267c109dc8"
+        },
+        {
+          "bytes": 1586,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_25.txt",
+          "sha256": "41e642caf4cb09f1537e72a376e5e64df7721402d61cf84a8ebfbf009720f46b"
+        },
+        {
+          "bytes": 1637,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_26.txt",
+          "sha256": "562650b4d3599588bc60130eb6f95b74fb6ff7fd0c4c64116ebbd0fad960cfda"
+        },
+        {
+          "bytes": 1706,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_27.txt",
+          "sha256": "3de0dd23369a9271cb791f23e2bbb1be47df8f34c16a7c5bcf33dc6843a1c78c"
+        },
+        {
+          "bytes": 947,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_28.txt",
+          "sha256": "d8255a875cea7b954a147a5ac744ebff5ab675e1fda3ff07af60941d9632d5c3"
+        },
+        {
+          "bytes": 2131,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_29.txt",
+          "sha256": "bdd93500fd718b13c66693d593d991f67d0267ef5154200441230ab196141555"
+        },
+        {
+          "bytes": 913,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_3.txt",
+          "sha256": "94cd1722b75093281292994a1614db88159a3dfe9c6a7f284eafd3a33b97f571"
+        },
+        {
+          "bytes": 835,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_31.txt",
+          "sha256": "24884396a9e1584c4b0f45a566043c863966c58c6590442da9e0e19668aabffc"
+        },
+        {
+          "bytes": 739,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_32.txt",
+          "sha256": "e5ac6199cde5c2118025102eabb9103b1ef73f2579dabbeb9584d8b697162b1c"
+        },
+        {
+          "bytes": 2000,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_33.txt",
+          "sha256": "7eb406bfa4452c3b716b647e2d7b2b6d73a3cc78a23f0aaff0040b10d1a18ef2"
+        },
+        {
+          "bytes": 1725,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_34.txt",
+          "sha256": "5e2b87aede4869df1f56d5b642a225fcf54f00a2f87f669e8fee822349890f81"
+        },
+        {
+          "bytes": 1690,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_35.txt",
+          "sha256": "0dc4e5738ade4be396c7b70f6415fc2c6d5d513d0ea5bb58acc880cf0de1c926"
+        },
+        {
+          "bytes": 4358,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_36.txt",
+          "sha256": "00a9c1ad47d30aa0b6e09fecd273f10ff8cd6c1f1b52e2912b4b4d48eae15ea2"
+        },
+        {
+          "bytes": 304,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_37.txt",
+          "sha256": "e5fda63e41bf3ddf96437ba7548af7c8a1c4d7c9544c210b7ffc0935beaa09ba"
+        },
+        {
+          "bytes": 1833,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_38.txt",
+          "sha256": "640e50f198905b60c0829bdc27004382f024dbabf0ee1a0a310e68d9a2691918"
+        },
+        {
+          "bytes": 1837,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_39.txt",
+          "sha256": "47eed066f9bedba9060f20e0d9931c0012e280cd43a54650792edd765181280c"
+        },
+        {
+          "bytes": 1800,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_4.txt",
+          "sha256": "e27a3aa552fb10a5c161cfdac0d05bf62f631468aa7e7e103ead6cc3179fa376"
+        },
+        {
+          "bytes": 1593,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_40.txt",
+          "sha256": "267605446cf74c3edd6daa128dd2aa8f1dd807cc60aec9d22121539fa0c6861d"
+        },
+        {
+          "bytes": 1004,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_41.txt",
+          "sha256": "19e1b73b40f8c5c47c3fd2d6cef13deb6f88bae30ca37e34a8b780380a8e55e4"
+        },
+        {
+          "bytes": 1800,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_42.txt",
+          "sha256": "416f9d27b3376ba06074ddf0f1faee7598319018b8454d1088cfb81cb81e943e"
+        },
+        {
+          "bytes": 1822,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_43.txt",
+          "sha256": "db52b3976b74729f42d5c546517d9e0eb6e5e84695d37ea50318cb088732bf16"
+        },
+        {
+          "bytes": 1946,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_45.txt",
+          "sha256": "4f78be30cc9492d83cd1430965101f42e423b8d33242199902881a1dbb325983"
+        },
+        {
+          "bytes": 1687,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_46.txt",
+          "sha256": "3516c69f9692e25534abc2df6f70f050bb4ea578ca9e830bbccd510d05814860"
+        },
+        {
+          "bytes": 1920,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_49.txt",
+          "sha256": "37b23aa5521e513212c1df0e11c58e09efcffa5297557b69ce02c7f4a5ae4dfe"
+        },
+        {
+          "bytes": 1878,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_5.txt",
+          "sha256": "f3f63de83c049d88e99c33e04fdc3a365ca7b5821dd9dad08ee8195b1861880a"
+        },
+        {
+          "bytes": 1658,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_50.txt",
+          "sha256": "7563a1052d5305c84124467707b21984d083ab8ffc54d21ec984790d584c7211"
+        },
+        {
+          "bytes": 2021,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_51.txt",
+          "sha256": "3960fd361020f6a6b27268a67d8cf4691b4e3d3bf6f658c82dacd098b6fc0dda"
+        },
+        {
+          "bytes": 1862,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_53.txt",
+          "sha256": "42bedef15d48487f0cb0f854305b39f73bc0e51d1ab206ef850b4f3938dacc55"
+        },
+        {
+          "bytes": 1791,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_54.txt",
+          "sha256": "63ee8f9f161bc30447b5d60d3b9e3ac3bf72f636f4b4fbf22f316b7aeb94162b"
+        },
+        {
+          "bytes": 1652,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_56.txt",
+          "sha256": "960eb139ded3249b35fe97a9157197a40a9200db416eb913ea8f4990e819c74b"
+        },
+        {
+          "bytes": 1897,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_57.txt",
+          "sha256": "809ba2bc43fb87b32fb1be9f827f1f0baa7856bffb84a1774c174f5573c916e8"
+        },
+        {
+          "bytes": 1741,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_58.txt",
+          "sha256": "70c0de1e71596e4cc39091c5a0b7b6657b8843d14eb3a89e979394d99ef868ef"
+        },
+        {
+          "bytes": 1858,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_59.txt",
+          "sha256": "0adbca96ec2466f22c39f48724387d264b4ab5c311a4e8f62d0a21665ed8db6b"
+        },
+        {
+          "bytes": 1858,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_6.txt",
+          "sha256": "dbb3827c57b9e812d86bf91f2c175c59ff5cd5d7167e862d6fbb285d20665a23"
+        },
+        {
+          "bytes": 1859,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_60.txt",
+          "sha256": "d1731cd311dbc9f8313563531c1bfb1e27bb1b0ffd62e5a5747b9d6ee84af67d"
+        },
+        {
+          "bytes": 252,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_61.txt",
+          "sha256": "f9ae1fefc30f6a7ef9f204c720b756ddaadeb8a368c71cdef0dd559e06ba3a96"
+        },
+        {
+          "bytes": 1821,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_62.txt",
+          "sha256": "6879b973b8433ee3ba29cd9246825de05403a07497982cc7010aff15f1e7e645"
+        },
+        {
+          "bytes": 1852,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_63.txt",
+          "sha256": "9b9d43f4556fe06696229d4aefe02bbfc8fbe28a630458f3e9a34d0647e1952d"
+        },
+        {
+          "bytes": 1877,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_64.txt",
+          "sha256": "0923d64f0570038333993b2ccbf2aad12a0a06380d8f23ac183e3256d597562f"
+        },
+        {
+          "bytes": 1834,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_65.txt",
+          "sha256": "7c91dac0d13d19270a9ed5e87ba5df16ffaaa044f53c1c5842ea4d4f035ff7c5"
+        },
+        {
+          "bytes": 1659,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_66.txt",
+          "sha256": "a840d53631af9a652edb03c712f05b8d9420d30c41ce0a2f4c5cfe084d92bd35"
+        },
+        {
+          "bytes": 1799,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_67.txt",
+          "sha256": "64ef6f6e415d1df237556d536a4cd87e6371fe401ed6908dcbfc3555c20965bd"
+        },
+        {
+          "bytes": 1915,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_68.txt",
+          "sha256": "98f94b589f0c4ceb366d8384131c47afa824d8414800da9d7b8a8e851ed9686d"
+        },
+        {
+          "bytes": 1893,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_69.txt",
+          "sha256": "f90432e8b0fd2d7cf0779156e1e84ad814edb401624e65e83ef62d3e62fb2cc2"
+        },
+        {
+          "bytes": 1965,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_70.txt",
+          "sha256": "a491830d71df6710ec7c6296db45df7ea9747fdd3f0017990271f6015192068b"
+        },
+        {
+          "bytes": 1789,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_71.txt",
+          "sha256": "63e6824cd8b9f51515ccad371cf159ed7ecb030c7cd4dc5e4d67a1ade196e33b"
+        },
+        {
+          "bytes": 1897,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_73.txt",
+          "sha256": "4b20777b9b79cb1b005b672239fe744de018bf479a5ad44c5147bb3ff2cd8c38"
+        },
+        {
+          "bytes": 1998,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_74.txt",
+          "sha256": "ae78a5006d65f376e1b93aea88a429beaf08bddbc720f791ed0a41fc5d753796"
+        },
+        {
+          "bytes": 1577,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_76.txt",
+          "sha256": "96bea80e5870d9631f9e2866f485786147e839c7cf749bd5d7ce75e62a94f72a"
+        },
+        {
+          "bytes": 701,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_78.txt",
+          "sha256": "f0118aaa8ffff8b640935e1d7d1a97263588b7661abcd88b2754e91e05589c73"
+        },
+        {
+          "bytes": 1887,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_79.txt",
+          "sha256": "025d47f8463a1d6c53dd5f1dc92884475778351c8697ce290d8a46dc47a5d53b"
+        },
+        {
+          "bytes": 1875,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_80.txt",
+          "sha256": "793e2079568c3ea6f985c598bbf6c55d9f7a62445a0a6f156fb6e871e3225a56"
+        },
+        {
+          "bytes": 1669,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_81.txt",
+          "sha256": "e01f14980e7ffb1aa4568b1104d81fa67ee4bad8bfc0195c5ed6e2245bda2784"
+        },
+        {
+          "bytes": 1750,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_84.txt",
+          "sha256": "91c08b211931aece10267d54745506070be0dfe750e43da88a4d0a7e54450a1d"
+        },
+        {
+          "bytes": 1795,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_85.txt",
+          "sha256": "7e561ac8a8eab4679ae910324907d4ac724786215d974188bb5c544d3e2e712e"
+        },
+        {
+          "bytes": 1741,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_86.txt",
+          "sha256": "a34799c5752a86a8bbe1e9790bd115148c93d8a3477fd2b5ad502374ccefd985"
+        },
+        {
+          "bytes": 1752,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_87.txt",
+          "sha256": "5f63e9bbb103d90e1f19515c2558ace7c097451d5109c25caaafe53163db24e0"
+        },
+        {
+          "bytes": 1686,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_88.txt",
+          "sha256": "bb2470eb502aea12ca3e7f1964b2d95933afa9fd0041db94d9f07198b2e977de"
+        },
+        {
+          "bytes": 1273,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_9.txt",
+          "sha256": "10607cfa7986dbc9cfa16314a07fa3fc38027ffe0b5dd74f7e2bfc6d0ddd7cf8"
+        },
+        {
+          "bytes": 1934,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_91.txt",
+          "sha256": "1ab89ba023421b61297299d6053564dd88c483c5028e61999ef86b68afcdb8b6"
+        },
+        {
+          "bytes": 1965,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_94.txt",
+          "sha256": "be5f88c4ede7230a6b717152d8494ed6f89794763d19b36d10cea68eaf5e9ac3"
+        },
+        {
+          "bytes": 1882,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_96.txt",
+          "sha256": "8ffe7a89352a6bddc475d4b936830b8a354d52be3d67f1cf74e0f028d29b4d85"
+        },
+        {
+          "bytes": 1735,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_97.txt",
+          "sha256": "ae7320c6fb40eb442cfd99dabe931dafef07393935129d25639775454db354f0"
+        },
+        {
+          "bytes": 1739,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_98.txt",
+          "sha256": "b7e8301930710cb3ba3b2b7220d88c5f4b4388aeaf6840e265f9ad089b7fa454"
+        },
+        {
+          "bytes": 1939,
+          "relative_path": "corpus/laboral/brat/ejemplo_3_99.txt",
+          "sha256": "14d015b4c673a34cb653aed1a89710cd52b9ecfc17bd94c06660d62c6bbdbece"
+        },
+        {
+          "bytes": 47241,
+          "relative_path": "gold_standard/laboral/hohfeld_laboral.json",
+          "sha256": "111154910066c3c68f8d92b6862345169c6e0f58d49a47eceee07fdbeb56e5df"
+        }
+      ],
+      "repository": "teresia-mrebel-corpus-juri",
+      "role": "historical_sentence_projection_and_transformation",
+      "url": "https://github.com/proyectoTeresIA/teresia-mrebel-corpus-juri.git"
+    }
+  ]
+}

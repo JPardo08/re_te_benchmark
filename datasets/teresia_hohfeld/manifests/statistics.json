@@ -1,0 +1,42 @@
+{
+  "annotations": 95,
+  "argument_patterns": {
+    "e1+comp+MissingE2": 25,
+    "e1+comp_without_MissingE2": 5,
+    "e1+e2": 6,
+    "e1+e2+comp": 53,
+    "e1+e2+comp+mod": 1,
+    "e2+comp_without_e1": 5
+  },
+  "benchmark_id": "teresia_hohfeld",
+  "benchmark_version": "0.1.0",
+  "document_level": {
+    "complete_te": 85,
+    "partial_te": 10
+  },
+  "documents": 36,
+  "eligibility_counts": {
+    "argument_level": 95,
+    "complete_triplet_strict_inline": 60,
+    "complete_triplet_with_missing_e2": 85,
+    "document_level_te": 85,
+    "relation_type": 95,
+    "schema_type": 95,
+    "sentence_projection": 65,
+    "sentence_span": 41,
+    "span_level_original": 60,
+    "textual_supportedness": 95
+  },
+  "projections": {
+    "historically_parser_excluded": 5,
+    "sentence_aligned": 65,
+    "span_complete": 41,
+    "unmatched_parseable_original": 25
+  },
+  "relation_distribution": {
+    "Duty": 49,
+    "NoRight": 5,
+    "Privilege": 4,
+    "Right": 37
+  }
+}
