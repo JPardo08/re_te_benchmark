@@ -2,19 +2,26 @@
 
 ## Source repositories
 
-The builder accepts portable roots:
+Builders accept portable roots. Development defaults discover `_legacy`
+siblings. No absolute user path is embedded in code or generated data.
 
-- `--estatuto-root` for `estatuto_goldstandard`;
-- `--corpus-juri-root` for `teresia-mrebel-corpus-juri`.
+### Hohfeld Gold
 
-Development defaults discover both below the workspace `_legacy` directory.
-No absolute user path is embedded in code or generated data.
+- `--estatuto-root` for `estatuto_goldstandard`
+- `--corpus-juri-root` for `teresia-mrebel-corpus-juri`
 
-The manifest records repository URL, commit, relative file path, byte size, and
-SHA-256 for every consumed source file. Source trees are referenced in place and
-are not copied into this repository.
+### mREBEL human-validated
 
-## Transformation chain
+- `--teresia-mrebel-root` for `teresia-mrebel`
+- `--corpus-juri-root` for `teresia-mrebel-corpus-juri` (accepted-view oracle)
+
+Manifests record repository URL, commit, relative file path, byte size, and
+SHA-256 for consumed source files. Source trees are referenced in place and are
+not copied into this repository.
+
+---
+
+## Hohfeld transformation chain
 
 1. **Original:** parse every typed block in
    `data/old/rels/articulo_*.txt`, preserving all known inline roles and
@@ -31,13 +38,39 @@ are not copied into this repository.
 4. **Span projection:** recompute exact subject/object offsets against projected
    `sent_text` and retain only complete rows.
 
-The historical notebook itself is hashed as transformation provenance. Every
-projected record carries both `original_annotation_id` and historical row id.
-
-## Known historical loss
+### Known historical loss (Hohfeld)
 
 The notebook required `e1`, retained only the first `e2`, flattened
 complements, and omitted `MissingE2` and modifiers. The rebuilt projection keeps
 its 65-row mapping behavior while attaching the complete canonical argument
 provenance. The 25 parseable unmatched originals and five historical parser
 exclusions remain in Layer B.
+
+---
+
+## mREBEL human-validated transformation chain
+
+1. **Historical context (non-canonical parent):** mREBEL dumps under
+   `results_completos/` and `REL_ALLOWED` filtering. Laboral allowed sentence
+   dumps currently exhibit soft-key drift versus annotation Excels; they are
+   hashed as context only.
+2. **Canonical human-judged universe:** read
+   `evaluacion/resultados_finales/metricas_finales_{laboral,tributario}.xlsx`
+   sheet `tripletas_etiquetadas`, preserving both annotator judgments, notes,
+   consensus, and adjudication origin.
+3. **Derived views:** accepted / rejected / disputed-before-consensus filters
+   over the canonical candidate IDs.
+4. **Published Silver regression:** compare accepted soft-keys against
+   `silver_standard/{laboral,tributario}/tripletas_*.csv`.
+
+### Provenance gap (documented)
+
+Because raw prediction dumps are not a proven monotonic parent of the judged
+rows for laboral, P0 does **not** claim a reconstructible S0→S1 funnel identity.
+The scientifically stable reconstructible universe begins at the human-judged
+final Excels.
+
+### Notes policy
+
+Free-text notes are preserved as-is (`FREE_TEXT_ONLY`). No error taxonomy is
+invented in P0.

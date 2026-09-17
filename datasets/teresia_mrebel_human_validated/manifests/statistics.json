@@ -1,0 +1,184 @@
+{
+  "evaluation_constraints": {
+    "candidate_selection_bias": true,
+    "independent_of_generator": false,
+    "recall_evaluation_of_generator_valid": false,
+    "rejected_semantics": "human_rejected_model_prediction",
+    "relation_ontology": "wikidata_like_rebel_not_hohfeld"
+  },
+  "generator": "mREBEL",
+  "iaa": {
+    "laboral": {
+      "AUDIT_RECOMPUTATION": {
+        "annotator_ids": [
+          "annotator_A",
+          "annotator_B"
+        ],
+        "cohen_kappa": 0.39996669372801275,
+        "matrix_2x2": {
+          "A_No_B_No": 660,
+          "A_No_B_Si": 252,
+          "A_Si_B_No": 48,
+          "A_Si_B_Si": 193
+        },
+        "n_overlap": 1153,
+        "observed_agreement": 0.7398091934084996,
+        "source": "AUDIT_RECOMPUTATION",
+        "subdomain": "laboral"
+      },
+      "HISTORICAL_REPORTED_METRIC": {
+        "artifact": "src/rebel/v3/evaluacion/resultados_finales/metricas_finales_laboral.xlsx",
+        "cohen_kappa": 0.3999666937280127,
+        "n_overlap": 1153,
+        "observed_agreement": 0.7398091934084996,
+        "sheet": "iaa_pre_adjudicacion",
+        "source": "HISTORICAL_REPORTED_METRIC"
+      },
+      "kappa_matches_historical": true
+    },
+    "tributario": {
+      "AUDIT_RECOMPUTATION": {
+        "annotator_ids": [
+          "annotator_A",
+          "annotator_B"
+        ],
+        "cohen_kappa": 0.5156039042960537,
+        "matrix_2x2": {
+          "A_No_B_No": 736,
+          "A_No_B_Si": 22,
+          "A_Si_B_No": 147,
+          "A_Si_B_Si": 131
+        },
+        "n_overlap": 1036,
+        "observed_agreement": 0.8368725868725869,
+        "source": "AUDIT_RECOMPUTATION",
+        "subdomain": "tributario"
+      },
+      "HISTORICAL_REPORTED_METRIC": {
+        "artifact": "src/rebel/v3/evaluacion/resultados_finales/metricas_finales_tributario.xlsx",
+        "cohen_kappa": 0.5156039042960537,
+        "n_overlap": 1036,
+        "observed_agreement": 0.8368725868725869,
+        "sheet": "iaa_pre_adjudicacion",
+        "source": "HISTORICAL_REPORTED_METRIC"
+      },
+      "kappa_matches_historical": true
+    }
+  },
+  "laboral": {
+    "acceptance_rate_by_relation": {
+      "different_from": 0.8,
+      "facet_of": 0.47115384615384615,
+      "field_of_work": 0.0,
+      "has_cause": 0.19444444444444445,
+      "instance_of": 0.14285714285714285,
+      "part_of": 0.25132275132275134,
+      "subclass_of": 0.25346534653465347
+    },
+    "accepted": 303,
+    "disputed_before_consensus": 300,
+    "dual_annotator_coverage": 1153,
+    "judged": 1153,
+    "rejected": 850,
+    "relation_distribution_accepted": {
+      "different_from": 8,
+      "facet_of": 49,
+      "has_cause": 7,
+      "instance_of": 16,
+      "part_of": 95,
+      "subclass_of": 128
+    },
+    "relation_distribution_judged": {
+      "different_from": 10,
+      "facet_of": 104,
+      "field_of_work": 8,
+      "has_cause": 36,
+      "instance_of": 112,
+      "part_of": 378,
+      "subclass_of": 505
+    },
+    "relation_distribution_rejected": {
+      "different_from": 2,
+      "facet_of": 55,
+      "field_of_work": 8,
+      "has_cause": 29,
+      "instance_of": 96,
+      "part_of": 283,
+      "subclass_of": 377
+    },
+    "unresolved": 0
+  },
+  "provenance_notes": {
+    "canonical_universe": "human_judged_final_excels",
+    "published_silver_role": "regression_oracle_for_accepted_view",
+    "raw_prediction_dumps": "recorded_as_historical_context_only;not_used_as_canonical_parent_due_to_laboral_version_drift"
+  },
+  "published_regression": {
+    "exact": true,
+    "laboral": {
+      "accepted": 303,
+      "accepted_not_in_published": [],
+      "exact": true,
+      "exact_soft_key_matches": 303,
+      "published": 303,
+      "published_not_in_accepted": [],
+      "subdomain": "laboral"
+    },
+    "tributario": {
+      "accepted": 162,
+      "accepted_not_in_published": [],
+      "exact": true,
+      "exact_soft_key_matches": 162,
+      "published": 162,
+      "published_not_in_accepted": [],
+      "subdomain": "tributario"
+    }
+  },
+  "resource_id": "teresia_mrebel_human_validated",
+  "resource_type": "model_dependent_human_validated",
+  "resource_version": "0.1.0",
+  "total": {
+    "accepted": 465,
+    "disputed_before_consensus": 469,
+    "dual_annotator_coverage": 2189,
+    "judged": 2189,
+    "rejected": 1724,
+    "unresolved": 0
+  },
+  "tributario": {
+    "acceptance_rate_by_relation": {
+      "facet_of": 0.3508771929824561,
+      "has_cause": 0.3,
+      "instance_of": 0.07792207792207792,
+      "part_of": 0.07514450867052024,
+      "subclass_of": 0.17363344051446947
+    },
+    "accepted": 162,
+    "disputed_before_consensus": 169,
+    "dual_annotator_coverage": 1036,
+    "judged": 1036,
+    "rejected": 874,
+    "relation_distribution_accepted": {
+      "facet_of": 20,
+      "has_cause": 9,
+      "instance_of": 12,
+      "part_of": 13,
+      "subclass_of": 108
+    },
+    "relation_distribution_judged": {
+      "facet_of": 57,
+      "has_cause": 30,
+      "instance_of": 154,
+      "part_of": 173,
+      "subclass_of": 622
+    },
+    "relation_distribution_rejected": {
+      "facet_of": 37,
+      "has_cause": 21,
+      "instance_of": 142,
+      "part_of": 160,
+      "subclass_of": 514
+    },
+    "unresolved": 0
+  }
+}

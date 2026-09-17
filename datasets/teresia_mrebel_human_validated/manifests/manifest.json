@@ -1,0 +1,312 @@
+{
+  "artifacts": [
+    {
+      "records": 2189,
+      "relative_path": "datasets/teresia_mrebel_human_validated/canonical/candidates.jsonl",
+      "role": "canonical",
+      "sha256": "38b18f7e0286354833dd4a69b620de8a1827947c963cc03d34646c40eb0b6ffc"
+    },
+    {
+      "records": 1,
+      "relative_path": "datasets/teresia_mrebel_human_validated/manifests/historical_regression.json",
+      "role": "historical_regression",
+      "sha256": "87994c0d75f359a312e112d673c4745b7eb22ae79e49aa192a77c89b2097c939"
+    },
+    {
+      "records": 1,
+      "relative_path": "datasets/teresia_mrebel_human_validated/manifests/statistics.json",
+      "role": "statistics",
+      "sha256": "27d539ef78e44d2ccbd20f4ddfd48816023d9d77426e5fac346bbcf170b6fe8c"
+    },
+    {
+      "records": 465,
+      "relative_path": "datasets/teresia_mrebel_human_validated/views/accepted/candidates.jsonl",
+      "role": "accepted",
+      "sha256": "3f830deb8f56b522c84d3ce67ffe07eed8ed69928dcb54cf6b1cc11905158d74"
+    },
+    {
+      "records": 469,
+      "relative_path": "datasets/teresia_mrebel_human_validated/views/disputed/candidates.jsonl",
+      "role": "disputed",
+      "sha256": "71a722cf2c14267764e42f7d9610ae96bffc07860b68ded42cafa2d88e835c61"
+    },
+    {
+      "records": 1724,
+      "relative_path": "datasets/teresia_mrebel_human_validated/views/rejected/candidates.jsonl",
+      "role": "rejected",
+      "sha256": "5bb5df2ebc172cf791bd0164ac598f728c4d0069dc90583dfc2abf8d78a5ac5f"
+    }
+  ],
+  "builder": {
+    "commit": "d329368d2ff3324badccac7cb853680071c40996",
+    "repository": "re_te_benchmark"
+  },
+  "content_metadata": {
+    "candidate_id_policy": "sha256(subdomain|row_canon|doc|sent_id|subject|relation|object)[:16]; contextual soft-key collisions are distinct candidates",
+    "notes_policy": "FREE_TEXT_ONLY; no error taxonomy",
+    "ordering": "subdomain laboral then tributario; ascending row_canon; candidate_id",
+    "timestamps_in_content": false
+  },
+  "counts": {
+    "evaluation_constraints": {
+      "candidate_selection_bias": true,
+      "independent_of_generator": false,
+      "recall_evaluation_of_generator_valid": false,
+      "rejected_semantics": "human_rejected_model_prediction",
+      "relation_ontology": "wikidata_like_rebel_not_hohfeld"
+    },
+    "generator": "mREBEL",
+    "iaa": {
+      "laboral": {
+        "AUDIT_RECOMPUTATION": {
+          "annotator_ids": [
+            "annotator_A",
+            "annotator_B"
+          ],
+          "cohen_kappa": 0.39996669372801275,
+          "matrix_2x2": {
+            "A_No_B_No": 660,
+            "A_No_B_Si": 252,
+            "A_Si_B_No": 48,
+            "A_Si_B_Si": 193
+          },
+          "n_overlap": 1153,
+          "observed_agreement": 0.7398091934084996,
+          "source": "AUDIT_RECOMPUTATION",
+          "subdomain": "laboral"
+        },
+        "HISTORICAL_REPORTED_METRIC": {
+          "artifact": "src/rebel/v3/evaluacion/resultados_finales/metricas_finales_laboral.xlsx",
+          "cohen_kappa": 0.3999666937280127,
+          "n_overlap": 1153,
+          "observed_agreement": 0.7398091934084996,
+          "sheet": "iaa_pre_adjudicacion",
+          "source": "HISTORICAL_REPORTED_METRIC"
+        },
+        "kappa_matches_historical": true
+      },
+      "tributario": {
+        "AUDIT_RECOMPUTATION": {
+          "annotator_ids": [
+            "annotator_A",
+            "annotator_B"
+          ],
+          "cohen_kappa": 0.5156039042960537,
+          "matrix_2x2": {
+            "A_No_B_No": 736,
+            "A_No_B_Si": 22,
+            "A_Si_B_No": 147,
+            "A_Si_B_Si": 131
+          },
+          "n_overlap": 1036,
+          "observed_agreement": 0.8368725868725869,
+          "source": "AUDIT_RECOMPUTATION",
+          "subdomain": "tributario"
+        },
+        "HISTORICAL_REPORTED_METRIC": {
+          "artifact": "src/rebel/v3/evaluacion/resultados_finales/metricas_finales_tributario.xlsx",
+          "cohen_kappa": 0.5156039042960537,
+          "n_overlap": 1036,
+          "observed_agreement": 0.8368725868725869,
+          "sheet": "iaa_pre_adjudicacion",
+          "source": "HISTORICAL_REPORTED_METRIC"
+        },
+        "kappa_matches_historical": true
+      }
+    },
+    "laboral": {
+      "acceptance_rate_by_relation": {
+        "different_from": 0.8,
+        "facet_of": 0.47115384615384615,
+        "field_of_work": 0.0,
+        "has_cause": 0.19444444444444445,
+        "instance_of": 0.14285714285714285,
+        "part_of": 0.25132275132275134,
+        "subclass_of": 0.25346534653465347
+      },
+      "accepted": 303,
+      "disputed_before_consensus": 300,
+      "dual_annotator_coverage": 1153,
+      "judged": 1153,
+      "rejected": 850,
+      "relation_distribution_accepted": {
+        "different_from": 8,
+        "facet_of": 49,
+        "has_cause": 7,
+        "instance_of": 16,
+        "part_of": 95,
+        "subclass_of": 128
+      },
+      "relation_distribution_judged": {
+        "different_from": 10,
+        "facet_of": 104,
+        "field_of_work": 8,
+        "has_cause": 36,
+        "instance_of": 112,
+        "part_of": 378,
+        "subclass_of": 505
+      },
+      "relation_distribution_rejected": {
+        "different_from": 2,
+        "facet_of": 55,
+        "field_of_work": 8,
+        "has_cause": 29,
+        "instance_of": 96,
+        "part_of": 283,
+        "subclass_of": 377
+      },
+      "unresolved": 0
+    },
+    "provenance_notes": {
+      "canonical_universe": "human_judged_final_excels",
+      "published_silver_role": "regression_oracle_for_accepted_view",
+      "raw_prediction_dumps": "recorded_as_historical_context_only;not_used_as_canonical_parent_due_to_laboral_version_drift"
+    },
+    "published_regression": {
+      "exact": true,
+      "laboral": {
+        "accepted": 303,
+        "accepted_not_in_published": [],
+        "exact": true,
+        "exact_soft_key_matches": 303,
+        "published": 303,
+        "published_not_in_accepted": [],
+        "subdomain": "laboral"
+      },
+      "tributario": {
+        "accepted": 162,
+        "accepted_not_in_published": [],
+        "exact": true,
+        "exact_soft_key_matches": 162,
+        "published": 162,
+        "published_not_in_accepted": [],
+        "subdomain": "tributario"
+      }
+    },
+    "resource_id": "teresia_mrebel_human_validated",
+    "resource_type": "model_dependent_human_validated",
+    "resource_version": "0.1.0",
+    "total": {
+      "accepted": 465,
+      "disputed_before_consensus": 469,
+      "dual_annotator_coverage": 2189,
+      "judged": 2189,
+      "rejected": 1724,
+      "unresolved": 0
+    },
+    "tributario": {
+      "acceptance_rate_by_relation": {
+        "facet_of": 0.3508771929824561,
+        "has_cause": 0.3,
+        "instance_of": 0.07792207792207792,
+        "part_of": 0.07514450867052024,
+        "subclass_of": 0.17363344051446947
+      },
+      "accepted": 162,
+      "disputed_before_consensus": 169,
+      "dual_annotator_coverage": 1036,
+      "judged": 1036,
+      "rejected": 874,
+      "relation_distribution_accepted": {
+        "facet_of": 20,
+        "has_cause": 9,
+        "instance_of": 12,
+        "part_of": 13,
+        "subclass_of": 108
+      },
+      "relation_distribution_judged": {
+        "facet_of": 57,
+        "has_cause": 30,
+        "instance_of": 154,
+        "part_of": 173,
+        "subclass_of": 622
+      },
+      "relation_distribution_rejected": {
+        "facet_of": 37,
+        "has_cause": 21,
+        "instance_of": 142,
+        "part_of": 160,
+        "subclass_of": 514
+      },
+      "unresolved": 0
+    }
+  },
+  "evaluation_constraints": {
+    "candidate_selection_bias": true,
+    "independent_of_generator": false,
+    "recall_evaluation_of_generator_valid": false,
+    "rejected_semantics": "human_rejected_model_prediction",
+    "relation_ontology": "wikidata_like_rebel_not_hohfeld"
+  },
+  "generator": {
+    "checkpoint": "Babelscape/mrebel-large",
+    "family": "mREBEL",
+    "model_dependent": true
+  },
+  "resource_id": "teresia_mrebel_human_validated",
+  "resource_type": "model_dependent_human_validated",
+  "resource_version": "0.1.0",
+  "role": "AUXILIARY_HUMAN_VALIDATED_ASSET",
+  "sources": [
+    {
+      "commit": "f75ad75567c9f10d7efa99cc58e0a20ae82de3ad",
+      "files": [
+        {
+          "bytes": 275732,
+          "relative_path": "src/rebel/v3/evaluacion/resultados_finales/metricas_finales_laboral.xlsx",
+          "sha256": "3356b7d056ae8a0096543b4aabc2d6e2cf33bf00d1611216f0c42bcecfc1511c"
+        },
+        {
+          "bytes": 221785,
+          "relative_path": "src/rebel/v3/evaluacion/resultados_finales/metricas_finales_tributario.xlsx",
+          "sha256": "586fad993d123e00549c522c1ef9944756c573adadc95231910f1143d512e535"
+        }
+      ],
+      "repository": "teresia-mrebel",
+      "role": "authoritative_human_judged_universe",
+      "url": "https://github.com/proyectoTeresIA/teresia-mrebel.git"
+    },
+    {
+      "commit": "0d79c10bd12def9d6f0120966ede0d609a3fdbd8",
+      "files": [
+        {
+          "bytes": 118058,
+          "relative_path": "silver_standard/laboral/tripletas_laboral.csv",
+          "sha256": "8702d915b023e8445b1885c945b5c65e103dad7d7875c717380a2e6be822752a"
+        },
+        {
+          "bytes": 46552,
+          "relative_path": "silver_standard/tributario/tripletas_tributario.csv",
+          "sha256": "6e7d0bfa07deeb718c0bfe1a374f9e8427b6fcf8f0d67010b667b9d3e0f4da34"
+        }
+      ],
+      "repository": "teresia-mrebel-corpus-juri",
+      "role": "published_accepted_silver_regression_oracle",
+      "url": "https://github.com/proyectoTeresIA/teresia-mrebel-corpus-juri.git"
+    },
+    {
+      "commit": "f75ad75567c9f10d7efa99cc58e0a20ae82de3ad",
+      "files": [
+        {
+          "bytes": 21140,
+          "relative_path": "src/rebel/v3/core/model.py",
+          "sha256": "5b9eba5dccdef73c7ddbb7a7efe3b562f34bc24934fd8af1b44895d29c994740"
+        },
+        {
+          "bytes": 446352,
+          "relative_path": "src/rebel/v3/results_completos/triplets_allowed_sentences_offsets_estatuto.csv",
+          "sha256": "67a25260e05feaed3b0c3368bea144f77a132952e351ffa53a69ee45d7dc1d7d"
+        },
+        {
+          "bytes": 366394,
+          "relative_path": "src/rebel/v3/results_completos/triplets_allowed_sentences_offsets_tributario.csv",
+          "sha256": "0d00080d8c0b00f30ec69614a6eddeeaa2332d67d6dad6b225854c2c122ba00f"
+        }
+      ],
+      "note": "Laboral allowed sentence dump exhibits soft-key drift versus human Excels; dumps are provenance context only.",
+      "repository": "teresia-mrebel",
+      "role": "historical_prediction_context_not_canonical_parent",
+      "url": "https://github.com/proyectoTeresIA/teresia-mrebel.git"
+    }
+  ]
+}

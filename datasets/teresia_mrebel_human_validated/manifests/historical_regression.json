@@ -1,0 +1,21 @@
+{
+  "exact": true,
+  "laboral": {
+    "accepted": 303,
+    "accepted_not_in_published": [],
+    "exact": true,
+    "exact_soft_key_matches": 303,
+    "published": 303,
+    "published_not_in_accepted": [],
+    "subdomain": "laboral"
+  },
+  "tributario": {
+    "accepted": 162,
+    "accepted_not_in_published": [],
+    "exact": true,
+    "exact_soft_key_matches": 162,
+    "published": 162,
+    "published_not_in_accepted": [],
+    "subdomain": "tributario"
+  }
+}

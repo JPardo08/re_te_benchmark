@@ -12,6 +12,8 @@ dependencies = []
 [project.scripts]
 build-hohfeld = "re_te_benchmark.cli:build_main"
 audit-hohfeld = "re_te_benchmark.cli:audit_main"
+build-silver = "re_te_benchmark.cli:build_silver_main"
+audit-silver = "re_te_benchmark.cli:audit_silver_main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -1,10 +1,22 @@
 # re_te_benchmark
 
 Reproducible benchmark data and schema packages for legal relation and triple
-extraction. P0 builds the Hohfeld Gold from its original article-level inline
-annotations without changing or copying the legacy sources.
+extraction.
 
-## Hohfeld layers
+## Resource tree
+
+```text
+TERESIA HOHFELD
+  = independent manual Gold (Hohfeld relations)
+
+TERESIA mREBEL HUMAN VALIDATED
+  = model-dependent human judgments over mREBEL proposals
+```
+
+These resources share packaging conventions but **must not** be mixed into a
+single TE ontology or scored as one Gold set.
+
+## Hohfeld Gold (P0)
 
 The original Gold is 95 typed source annotations. It is not equivalent to the
 65-row published TeresIA table: that table is a historical sentence-aligned
@@ -15,22 +27,36 @@ projection, and only 41 projected rows have complete subject/object spans.
 - Layer C: 65 historical sentence-aligned annotations.
 - Layer D: 41 span-complete projected annotations.
 
-Layers C and D are derived views, not the full Gold. See `docs/` for the frozen
-specification, Gold policy, and transformation provenance.
+## mREBEL human-validated asset (P0)
+
+Canonical universe: **2189** dual-judged candidates reconstructed from the
+human consensus Excels (laboral 1153 + tributario 1036).
+
+Derived views:
+
+- accepted: 465 (`human_accepted_mrebel_proposal`)
+- rejected: 1724 (`human_rejected_model_prediction`)
+- disputed-before-consensus: 469 (all resolved in P0)
+
+This asset is **generator-dependent**. It cannot measure mREBEL recall and is
+not an independent test set for mREBEL. See `docs/SILVER_POLICY.md`.
 
 ## Build
 
-From this repository:
-
 ```bash
 python3 scripts/build_hohfeld.py
+python3 scripts/build_silver.py
 ```
 
-Portable source locations can be supplied explicitly:
+Portable roots:
 
 ```bash
 python3 scripts/build_hohfeld.py \
   --estatuto-root /path/to/estatuto_goldstandard \
+  --corpus-juri-root /path/to/teresia-mrebel-corpus-juri
+
+python3 scripts/build_silver.py \
+  --teresia-mrebel-root /path/to/teresia-mrebel \
   --corpus-juri-root /path/to/teresia-mrebel-corpus-juri
 ```
 
@@ -40,18 +66,15 @@ No package installation or non-stdlib runtime dependency is required.
 
 ```bash
 python3 scripts/audit_hohfeld.py
-python3 -m unittest discover -s tests
+python3 scripts/audit_silver.py
+python3 -m unittest discover -s tests -t .
 ```
-
-The audit validates critical counts, C1, artifact hashes, and exact historical
-regression.
 
 ## Outputs
 
-Generated files live under `datasets/teresia_hohfeld/`: canonical document and
-annotation JSONL, sentence-aligned and span-complete JSONL views, statistics,
-historical regression results, and a SHA-256 manifest. The C1 label package is
-`schemas/c1/hohfeld_labels.json`.
+- `datasets/teresia_hohfeld/` — Gold layers + manifests + C1 labels
+- `datasets/teresia_mrebel_human_validated/` — judged candidates + accepted /
+  rejected / disputed views + manifests
 
 Ordering and serialization are deterministic. Content-addressed artifacts omit
 timestamps; manifests pin consumed source files and repository revisions.
