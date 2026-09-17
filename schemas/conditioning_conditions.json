@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0.0",
+  "conditions": {
+    "C0": {
+      "id": "C0",
+      "name": "OPEN",
+      "description": "Input text only; no supplied target-schema knowledge.",
+      "permitted_knowledge_components": [],
+      "forbidden_knowledge_components": [
+        "relation_labels",
+        "relation_definitions",
+        "entity_type_vocabulary",
+        "argument_roles",
+        "relation_signatures",
+        "domain_constraints",
+        "range_constraints",
+        "relation_directionality",
+        "relation_hierarchy",
+        "formal_classes_properties",
+        "formal_axioms",
+        "stable_uris",
+        "lexical_triggers",
+        "complements",
+        "examples",
+        "gold_frequencies_statistics",
+        "silver_examples",
+        "aliases",
+        "shacl_formal_validation_shapes"
+      ],
+      "readiness": "READY",
+      "unresolved_components": []
+    },
+    "C1": {
+      "id": "C1",
+      "name": "LABEL-CONDITIONED",
+      "description": "Input text plus only the frozen closed target relation-label inventory.",
+      "permitted_knowledge_components": [
+        "relation_labels"
+      ],
+      "forbidden_knowledge_components": [
+        "relation_definitions",
+        "entity_type_vocabulary",
+        "argument_roles",
+        "relation_signatures",
+        "domain_constraints",
+        "range_constraints",
+        "relation_directionality",
+        "relation_hierarchy",
+        "formal_classes_properties",
+        "formal_axioms",
+        "stable_uris",
+        "lexical_triggers",
+        "complements",
+        "examples",
+        "gold_frequencies_statistics",
+        "silver_examples",
+        "aliases",
+        "shacl_formal_validation_shapes"
+      ],
+      "readiness": "READY",
+      "unresolved_components": []
+    },
+    "C2": {
+      "id": "C2",
+      "name": "SCHEMA-CONDITIONED",
+      "description": "C1 plus an independently justified descriptive relation schema.",
+      "permitted_knowledge_components": [
+        "relation_labels",
+        "relation_definitions",
+        "entity_type_vocabulary",
+        "argument_roles",
+        "relation_signatures",
+        "domain_constraints",
+        "range_constraints",
+        "relation_directionality",
+        "relation_hierarchy",
+        "lexical_triggers",
+        "complements",
+        "aliases"
+      ],
+      "forbidden_knowledge_components": [
+        "examples",
+        "gold_frequencies_statistics",
+        "silver_examples"
+      ],
+      "readiness": "PARTIAL",
+      "unresolved_components": [
+        "relation_definitions",
+        "argument_role_semantics",
+        "normative_relation_signatures",
+        "normative_domain_constraints",
+        "normative_range_constraints",
+        "relation_directionality_semantics",
+        "relation_hierarchy",
+        "independent_lexical_trigger_source",
+        "independent_alias_source"
+      ]
+    },
+    "C3": {
+      "id": "C3",
+      "name": "ONTOLOGY-CONDITIONED",
+      "description": "C2 plus explicit machine-interpretable target knowledge with stable identity and formal commitments.",
+      "permitted_knowledge_components": [
+        "relation_labels",
+        "relation_definitions",
+        "entity_type_vocabulary",
+        "argument_roles",
+        "relation_signatures",
+        "domain_constraints",
+        "range_constraints",
+        "relation_directionality",
+        "relation_hierarchy",
+        "formal_classes_properties",
+        "formal_axioms",
+        "stable_uris",
+        "lexical_triggers",
+        "complements",
+        "aliases",
+        "shacl_formal_validation_shapes"
+      ],
+      "forbidden_knowledge_components": [
+        "examples",
+        "gold_frequencies_statistics",
+        "silver_examples"
+      ],
+      "readiness": "NOT_READY",
+      "unresolved_components": [
+        "relation_definitions",
+        "argument_role_semantics",
+        "normative_relation_signatures",
+        "normative_domain_constraints",
+        "normative_range_constraints",
+        "relation_directionality_semantics",
+        "relation_hierarchy",
+        "independent_lexical_trigger_source",
+        "independent_alias_source",
+        "stable_uris",
+        "formal_classes_properties",
+        "formal_relationships_and_constraints",
+        "justified_axioms"
+      ]
+    }
+  }
+}
