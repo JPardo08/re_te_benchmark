@@ -712,3 +712,107 @@ author before redistribution or ontology reuse.
 23. Martín-Chozas, P., Montiel-Ponsoda, E., Vázquez, K., &
     Rodríguez-Doncel, V. (2020). *Labour Law Terminology*. Zenodo.
     <https://doi.org/10.5281/zenodo.3843561>.
+
+## 19. Addendum: C2_SCHEMA_V1 (2026-10-13)
+
+This addendum records the implementation decision. It does not replace the
+findings above, and it does not implement C3.
+
+`schemas/c2/c2_schema_v1.json` freezes paraphrases of Duty, Right as
+claim-right, Privilege as liberty rather than administrative permission, and
+NoRight as absence of the correlative claim rather than prohibition. Each
+paraphrase cites Hohfeld 1913. The four-label scope is supported by the 2021
+CEUR paper. The 2022 PLN paper is cited for the complement account and as
+project lineage; its abstract does not itself state the four-label inventory,
+so it is not treated as a definition source. Correlatives and opposites are
+described with their parties and with action polarity. The payload states that
+a correlative is the other party's position and is not the same position with
+the textual arguments exchanged. It does not add a general instruction to
+preserve output format or to avoid inventing entities. Annotation-tag
+instructions stay in the package and are not projected, because the extractor
+input is unmarked source text.
+
+The following audit recommendations are applied: do not freeze `e1` as bearer
+or `e2` as counterpart; do not freeze entity-type definitions; omit domain,
+range, and closed signatures. The 2026-10-13 author reply is recorded as
+`AUTHOR_CONFIRMED` for directionality, `comp`, the non-deterministic effect of
+`mod`, and the absence meaning of `MissingE1` and `MissingE2`. Its statute
+examples are not stored. Its entity-type gloss is not adopted, because it
+conflicts with the 2021 examples and the 2023 thesis glosses.
+
+NORMA-O and the Provision Model, inspected in the same day's ontology audit,
+are exclusions. They are not imported and they are not declared equivalent to
+the four labels. C2 readiness remains partial. C3 remains a new formalization
+path, not this package.
+
+## 20. Addendum: C3_ONTOLOGY_V1 TBox (2026-10-13)
+
+This addendum records a later implementation. It does not replace the audit
+above and it does not make the experimental C3 condition ready.
+
+`schemas/c3/c3_ontology_v1.ttl` is a provisional local TBox. Its IRI,
+`urn:example:re-te-benchmark:c3:first-order-position:v1`, is a reserved
+example URN and is not a published namespace. The companion record
+`schemas/c3/c3_ontology_v1.json` pins the C2 content and payload hashes and
+marks the artifact `TBOX_ONLY` and `NOT_EXECUTABLE`.
+
+The implemented profile follows the C3.0 design only where a commitment is
+both Hohfeldian and expressible as an OWL 2 DL constraint on existing
+structure. `FirstOrderPosition` is equivalent to the disjoint union of the
+four C1 classes, so the root is scoped to the studied first-order square
+rather than to every legal position. Second-order positions are not declared
+and are not excluded by a complement axiom. `correlatesWith` and `oppositeOf`
+are symmetric and irreflexive. Universal restrictions limit the class of an
+existing filler: Right with Duty, and Privilege with NoRight, for correlatives;
+Right with NoRight, and Duty with Privilege, for opposites. Those restrictions
+do not assert that a filler exists and do not swap bearer and counterpart.
+Act and polarity are different classes. In the first Turtle revision, both
+`hasAct` and `hasPolarity` were functional, and `hasCounterpart` was
+property-disjoint from `hasBearer`. No OWL reasoner was available in the
+benchmark environment when that revision was added. The explicit fixture helper
+in `tests/test_c3_ontology.py` was not that reasoning step.
+
+Ontology version `1.0.1`, dated 2026-10-14, withdraws those two commitments.
+`hasBearer` and `hasCounterpart` remain separate properties with abstract
+domain and range. Their property disjointness is not an axiom, because a
+difference of roles does not independently require different individuals.
+No functional axiom is declared for `hasAct`, and that absence is not an axiom
+that the property is non-functional. No cardinality replaces the withdrawn
+axiom. `hasPolarity`
+remains functional: one `NormativeContent` individual has at most one distinct
+polarity, and a polarity is not required. `Polarity` is not closed by
+enumeration. Content, correlative, and opposite properties are not functional.
+`NoRight` is a class. No external ontology is imported, and no Gold type or
+observed signature is used as a domain or range.
+
+The following C3.0 ideas are not axioms in this file: an existential or
+constructive correlative, participant inversion, same-party and same-act
+comparison for opposition, and any reading of class disjointness as a
+substitute for opposition. The 2026-10-14 check used ROBOT 1.9.11, OWL API
+4.5.29, and HermiT 1.4.5.456 outside the repository. That check found the
+revised TBox inside OWL 2 DL, consistent, and coherent. It does not make the
+experimental C3 condition executable. Whether `Polarity` should later be
+closed, and whether a legal reviewer should restore individual inequality of
+bearer and counterpart, remain human decisions.
+
+C3.2a does not change those bytes. It accepts functional `hasPolarity` as the
+commitment that one content node has at most one distinct polarity, without
+requiring a polarity. No functional axiom is declared for `hasAct`. `Polarity`
+stays open. Sharing a polarity does not identify an act, a position, or a
+party. The correlative axioms remain type restrictions on an existing link.
+The first projection paired the C2 payload with a JSON fragment list and with a
+natural-language rendering of that list. That rendering stated some absences
+as if they were axioms. C3.2b withdraws that experimental shape. The candidate
+C3 arm is OWL Functional-Style Syntax of the asserted axioms only, and C3-NL
+paraphrases those same axioms. Records of unspecified absences stay out of both
+payloads. The Turtle file changes only the two C2 hash annotations. Neither
+projection makes the experimental condition executable.
+
+C3.2c does not change the logical axioms. It replaces the C2 Privilege
+definition that could be read as the absence of both a duty to perform and a
+duty to refrain. A privilege to perform is the absence of a duty to refrain,
+and a privilege to refrain is the absence of a duty to perform. The Turtle
+file again changes only the two C2 hash annotations. `Performance` and
+`Forbearance` remain fixed vocabulary individuals, not corpus instances. The
+common instruction shell is separate from this ontology and from the C2
+payload.

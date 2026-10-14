@@ -73,7 +73,8 @@ class ConditioningSpecificationTests(unittest.TestCase):
     def test_c2_is_not_ready_with_required_gaps(self) -> None:
         c2 = self.conditions["C2"]
         self.assertEqual(c2["readiness"], "PARTIAL")
-        self.assertIn("relation_definitions", c2["unresolved_components"])
+        self.assertNotIn("relation_definitions", c2["unresolved_components"])
+        self.assertIn("entity_type_definitions", c2["unresolved_components"])
         self.assertIn("argument_role_semantics", c2["unresolved_components"])
         self.assertIn(
             "normative_domain_constraints",

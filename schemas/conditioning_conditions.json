@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "conditions": {
     "C0": {
       "id": "C0",
@@ -85,8 +85,8 @@
       ],
       "readiness": "PARTIAL",
       "unresolved_components": [
-        "relation_definitions",
         "argument_role_semantics",
+        "entity_type_definitions",
         "normative_relation_signatures",
         "normative_domain_constraints",
         "normative_range_constraints",
@@ -125,8 +125,8 @@
       ],
       "readiness": "NOT_READY",
       "unresolved_components": [
-        "relation_definitions",
         "argument_role_semantics",
+        "entity_type_definitions",
         "normative_relation_signatures",
         "normative_domain_constraints",
         "normative_range_constraints",
