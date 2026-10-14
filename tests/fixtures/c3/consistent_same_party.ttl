@@ -1,0 +1,9 @@
+# The same party individual fills both roles of one position.
+# C3.1c does not forbid that reading. This file is not an OWL consistency proof.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+
+fx:party-north a h:Party .
+fx:position-burden a h:Duty ;
+  h:hasBearer fx:party-north ;
+  h:hasCounterpart fx:party-north .

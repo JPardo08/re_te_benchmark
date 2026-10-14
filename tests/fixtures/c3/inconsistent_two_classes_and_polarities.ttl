@@ -1,0 +1,8 @@
+# One individual is typed as two position classes, and one content has both polarities.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+
+fx:position-both a h:Right, h:Duty .
+fx:content-both a h:NormativeContent ;
+  h:hasPolarity h:Performance ;
+  h:hasPolarity h:Forbearance .

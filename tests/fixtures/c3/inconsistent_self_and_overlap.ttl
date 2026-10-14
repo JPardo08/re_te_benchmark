@@ -1,0 +1,9 @@
+# One position is linked to itself, and the same pair is both correlative and opposite.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+
+fx:position-burden a h:Duty ;
+  h:correlatesWith fx:position-burden .
+fx:position-claim a h:Right ;
+  h:correlatesWith fx:position-burden ;
+  h:oppositeOf fx:position-burden .

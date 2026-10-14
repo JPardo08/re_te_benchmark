@@ -1,0 +1,192 @@
+{
+  "package_id": "C3_ONTOLOGY_V1",
+  "package_version": "1.0.0",
+  "artifact_role": "TBOX_ONLY",
+  "artifact_role_note": "The identifier TBOX_ONLY is retained because existing contracts read it. The file is not only class and property axioms. It also asserts the fixed vocabulary individuals Performance and Forbearance, their membership in Polarity, and their mutual difference. It contains no individual derived from a corpus document.",
+  "experimental_condition_status": "NOT_EXECUTABLE",
+  "namespace": {
+    "iri": "urn:example:re-te-benchmark:c3:first-order-position:v1",
+    "vocabulary_iri": "urn:example:re-te-benchmark:c3:first-order-position:v1#",
+    "prefix": "h",
+    "status": "PROVISIONAL_NOT_PUBLISHED",
+    "approval": "PENDING_HUMAN_APPROVAL",
+    "note": "The URN uses the reserved example namespace. It is not registered or published."
+  },
+  "ontology": {
+    "path": "schemas/c3/c3_ontology_v1.ttl",
+    "version": "1.0.1",
+    "sha256": "5dfac3fae2f74aa9aa1f22efb2d41531b10eba43117f67fdfd8601cd4209d397"
+  },
+  "c1_dependency": {
+    "path": "schemas/c1/hohfeld_labels.json",
+    "schema_id": "hohfeld_labels",
+    "version": "1.0.0",
+    "labels": [
+      "Duty",
+      "Right",
+      "Privilege",
+      "NoRight"
+    ]
+  },
+  "c2_dependency": {
+    "package_id": "C2_SCHEMA_V1",
+    "package_version": "1.0.0",
+    "path": "schemas/c2/c2_schema_v1.json",
+    "content_sha256": "037ab7bcf9691310f5a56a1bb7c635f6c230bdc270d37d5cc9578c88afb76d24",
+    "payload_sha256": "314a220d1916c260ff6f94c731225c43a39fa8136719794586298d47fdbe57fc"
+  },
+  "implemented_commitments": [
+    "four_disjoint_position_classes",
+    "first_order_position_equivalent_to_union",
+    "bearer_and_counterpart_domain_range",
+    "normative_content_separated_from_act_and_polarity",
+    "functional_polarity",
+    "statement_disjoint_from_position",
+    "correlates_with_type_restriction_only",
+    "opposite_of_type_restriction_only",
+    "correlative_and_opposite_property_disjointness"
+  ],
+  "withdrawn_commitments": [
+    {
+      "id": "bearer_counterpart_property_disjointness",
+      "revision": "1.0.1",
+      "reason": "Distinct role properties do not independently justify requiring the bearer and the counterpart to be different individuals."
+    },
+    {
+      "id": "functional_act",
+      "revision": "1.0.1",
+      "reason": "One act per content node is an extra granularity decision. C2 allows an act, a forbearance, or another complement, and no cardinality replaces the withdrawn axiom."
+    }
+  ],
+  "pending_commitments": [
+    "published_namespace",
+    "extractor_payload",
+    "existential_correlative",
+    "participant_inversion",
+    "same_parties_act_and_polarity_for_opposition",
+    "functional_bearer_counterpart_and_content",
+    "bearer_counterpart_individual_inequality",
+    "polarity_enumeration_closure",
+    "shacl",
+    "textual_argument_mapping"
+  ],
+  "competency_questions": [
+    {
+      "id": "CQ-COV",
+      "requirement": "The scoped root covers exactly the four studied positions.",
+      "question": "Is every FirstOrderPosition exactly one of Duty, Right, Privilege, and NoRight, without excluding an individual that is not a first-order position?",
+      "check": "entailment_and_satisfiability",
+      "axioms": [
+        "first_order_position_equivalent_to_union",
+        "four_disjoint_position_classes"
+      ]
+    },
+    {
+      "id": "CQ-COR-TYPE",
+      "requirement": "An existing correlative link has the matching position type.",
+      "question": "If a Right is linked by correlatesWith, must that filler be a Duty?",
+      "check": "entailment",
+      "axioms": [
+        "correlates_with_type_restriction_only"
+      ]
+    },
+    {
+      "id": "CQ-COR-WRONG",
+      "requirement": "A correlative link to the wrong position class is not coherent.",
+      "question": "Is a Right linked by correlatesWith to a Privilege inconsistent with the TBox?",
+      "check": "consistency",
+      "axioms": [
+        "correlates_with_type_restriction_only",
+        "four_disjoint_position_classes"
+      ]
+    },
+    {
+      "id": "CQ-NO-COR",
+      "requirement": "A position may be stated without an explicit correlative.",
+      "question": "Is a Right with no correlatesWith link consistent, and does the TBox refrain from constructing a correlative individual?",
+      "check": "consistency_and_non_entailment",
+      "axioms": [
+        "correlates_with_type_restriction_only"
+      ]
+    },
+    {
+      "id": "CQ-NORIGHT",
+      "requirement": "NoRight is an explicit class and is not produced by absence or by closed-world reasoning.",
+      "question": "Does asserting a Right fail to entail that it is a NoRight and fail to entail that a NoRight individual exists?",
+      "check": "non_entailment",
+      "axioms": [
+        "four_disjoint_position_classes"
+      ]
+    },
+    {
+      "id": "CQ-SYM",
+      "requirement": "Correlativity and opposition are symmetric when a link is stated.",
+      "question": "Does a stated correlatesWith or oppositeOf link entail the reverse link without creating a new individual?",
+      "check": "entailment",
+      "axioms": [
+        "correlates_with_type_restriction_only",
+        "opposite_of_type_restriction_only"
+      ]
+    },
+    {
+      "id": "CQ-NO-INVERSION",
+      "requirement": "Participant inversion is not an OWL consequence.",
+      "question": "Does a correlative link entail that the bearer of one position is the counterpart of the other?",
+      "check": "non_entailment",
+      "axioms": [
+        "bearer_and_counterpart_domain_range"
+      ]
+    },
+    {
+      "id": "CQ-POLARITY",
+      "requirement": "A content node has at most one distinct polarity and need not have one.",
+      "question": "Is missing polarity consistent, are two undesignated polarity IRIs identified, and are Performance and Forbearance together inconsistent?",
+      "check": "consistency_entailment_and_identity",
+      "axioms": [
+        "functional_polarity"
+      ]
+    },
+    {
+      "id": "CQ-SAME-PARTY",
+      "requirement": "Role labels do not force the bearer and the counterpart to be different individuals.",
+      "question": "Is one position with the same party individual in both roles consistent?",
+      "check": "consistency",
+      "axioms": [
+        "bearer_and_counterpart_domain_range"
+      ]
+    },
+    {
+      "id": "CQ-ACTS",
+      "requirement": "A content node is not limited to one act.",
+      "question": "Are two explicitly distinct acts on one content node consistent, and does the TBox refrain from identifying them?",
+      "check": "consistency_and_non_entailment",
+      "axioms": [
+        "normative_content_separated_from_act_and_polarity"
+      ]
+    },
+    {
+      "id": "CQ-VOCAB",
+      "requirement": "The vocabulary contains the intended classes and properties and does not contain the withdrawn or excluded axioms.",
+      "question": "Are the four positions, the abstract properties, and the exclusions present as vocabulary, without imports, complements, correlative class equivalences, bearer disjointness, or a functional hasAct?",
+      "check": "vocabulary_query",
+      "axioms": [
+        "four_disjoint_position_classes",
+        "functional_polarity"
+      ]
+    }
+  ],
+  "exclusions": [
+    "external_ontology_import",
+    "gold_entity_types",
+    "observed_signatures",
+    "gold_or_statute_examples",
+    "correlative_class_equivalence",
+    "noright_as_complement",
+    "potestative_position_classes",
+    "closed_world_cardinality"
+  ],
+  "integrity": {
+    "canonicalization": "json.dumps ensure_ascii=false indent=2 trailing-newline",
+    "content_sha256": "fbccf154a4b822476e73ecca10c306536ab70c08383e5d4a972ead8e9e4776e7"
+  }
+}

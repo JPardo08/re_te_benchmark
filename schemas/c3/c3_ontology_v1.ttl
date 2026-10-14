@@ -1,0 +1,194 @@
+# C3_ONTOLOGY_V1
+# Provisional local TBox. Not a published namespace. Not an extractor payload.
+# Descriptive paraphrases remain in C2_SCHEMA_V1 and are not copied here.
+
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+h:namespaceStatus a owl:AnnotationProperty .
+h:approvalStatus a owl:AnnotationProperty .
+h:artifactRole a owl:AnnotationProperty .
+h:c2PackageId a owl:AnnotationProperty .
+h:c2PackageVersion a owl:AnnotationProperty .
+h:c2ContentSha256 a owl:AnnotationProperty .
+h:c2PayloadSha256 a owl:AnnotationProperty .
+
+<urn:example:re-te-benchmark:c3:first-order-position:v1>
+  a owl:Ontology ;
+  rdfs:label "Provisional first-order Hohfeld TBox"@en ;
+  owl:versionInfo "1.0.1" ;
+  h:namespaceStatus "PROVISIONAL_NOT_PUBLISHED" ;
+  h:approvalStatus "PENDING_HUMAN_APPROVAL" ;
+  h:artifactRole "TBOX_ONLY" ;
+  h:c2PackageId "C2_SCHEMA_V1" ;
+  h:c2PackageVersion "1.0.0" ;
+h:c2ContentSha256 "037ab7bcf9691310f5a56a1bb7c635f6c230bdc270d37d5cc9578c88afb76d24" ;
+h:c2PayloadSha256 "314a220d1916c260ff6f94c731225c43a39fa8136719794586298d47fdbe57fc" ;
+  rdfs:comment "Local provisional TBox for Duty, Right, Privilege, and NoRight. The ontology IRI is a reserved example URN and is not a published namespace. This file is not an extractor payload. It does not import an external ontology. FirstOrderPosition is exactly those four classes. Second-order positions are not declared and are not removed by a complement axiom. correlatesWith and oppositeOf constrain the class of a filler when a link is already stated. They do not require a filler, do not swap the parties of a position, and do not compare parties, act, or polarity across two positions. NoRight is a position class. Version 1.0.1 withdraws property disjointness between hasBearer and hasCounterpart, and withdraws functionality of hasAct. hasPolarity remains functional and does not require a polarity to exist."@en .
+
+h:FirstOrderPosition a owl:Class ;
+  rdfs:label "First-order position"@en ;
+  rdfs:comment "Scoped root. Its extension is fixed by the union axiom to the four declared position classes. It is not a class of every legal position."@en ;
+  owl:equivalentClass [
+    a owl:Class ;
+    owl:unionOf (
+      h:Duty
+      h:Right
+      h:Privilege
+      h:NoRight
+    )
+  ] .
+
+h:Duty a owl:Class ;
+  rdfs:label "Duty"@en ;
+  rdfs:subClassOf h:FirstOrderPosition ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:correlatesWith ;
+    owl:allValuesFrom h:Right
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:oppositeOf ;
+    owl:allValuesFrom h:Privilege
+  ] .
+
+h:Right a owl:Class ;
+  rdfs:label "Right"@en ;
+  rdfs:subClassOf h:FirstOrderPosition ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:correlatesWith ;
+    owl:allValuesFrom h:Duty
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:oppositeOf ;
+    owl:allValuesFrom h:NoRight
+  ] .
+
+h:Privilege a owl:Class ;
+  rdfs:label "Privilege"@en ;
+  rdfs:subClassOf h:FirstOrderPosition ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:correlatesWith ;
+    owl:allValuesFrom h:NoRight
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:oppositeOf ;
+    owl:allValuesFrom h:Duty
+  ] .
+
+h:NoRight a owl:Class ;
+  rdfs:label "NoRight"@en ;
+  rdfs:subClassOf h:FirstOrderPosition ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:correlatesWith ;
+    owl:allValuesFrom h:Privilege
+  ] ;
+  rdfs:subClassOf [
+    a owl:Restriction ;
+    owl:onProperty h:oppositeOf ;
+    owl:allValuesFrom h:Right
+  ] .
+
+[
+  a owl:AllDisjointClasses ;
+  owl:members (
+    h:Duty
+    h:Right
+    h:Privilege
+    h:NoRight
+  )
+] .
+
+h:Party a owl:Class ;
+  rdfs:label "Party"@en ;
+  rdfs:comment "Abstract party of a position. It has no subclasses drawn from annotation entity types."@en .
+
+h:Act a owl:Class ;
+  rdfs:label "Act"@en ;
+  rdfs:comment "Polarity-neutral act. Two contents can refer to one act and still differ in polarity."@en .
+
+h:Polarity a owl:Class ;
+  rdfs:label "Polarity"@en ;
+  rdfs:comment "Open class. Performance and Forbearance are two distinct members. The class is not closed by enumeration, so another polarity is not excluded. Closure is not decided here."@en .
+
+h:Performance a owl:NamedIndividual, h:Polarity ;
+  rdfs:label "Performance"@en .
+
+h:Forbearance a owl:NamedIndividual, h:Polarity ;
+  rdfs:label "Forbearance"@en ;
+  owl:differentFrom h:Performance .
+
+h:NormativeContent a owl:Class ;
+  rdfs:label "Normative content"@en ;
+  rdfs:comment "A content node may link an act and a polarity. Identity of this node is not identity of a position, and identity of an act is not identity of a content node."@en .
+
+h:NormativeStatement a owl:Class ;
+  rdfs:label "Normative statement"@en ;
+  rdfs:comment "A statement may support a position. The statement and the position are different individuals."@en .
+
+[
+  a owl:AllDisjointClasses ;
+  owl:members (
+    h:FirstOrderPosition
+    h:Party
+    h:Act
+    h:Polarity
+    h:NormativeContent
+    h:NormativeStatement
+  )
+] .
+
+h:hasBearer a owl:ObjectProperty ;
+  rdfs:label "has bearer"@en ;
+  rdfs:domain h:FirstOrderPosition ;
+  rdfs:range h:Party ;
+  rdfs:comment "Party who holds the position. This is not a textual argument slot."@en .
+
+h:hasCounterpart a owl:ObjectProperty ;
+  rdfs:label "has counterpart"@en ;
+  rdfs:domain h:FirstOrderPosition ;
+  rdfs:range h:Party ;
+  rdfs:comment "The other party role. Sharing one individual with the bearer is not forbidden. No party-inversion rule is stated."@en .
+
+h:hasNormativeContent a owl:ObjectProperty ;
+  rdfs:label "has normative content"@en ;
+  rdfs:domain h:FirstOrderPosition ;
+  rdfs:range h:NormativeContent .
+
+h:hasAct a owl:ObjectProperty ;
+  rdfs:label "has act"@en ;
+  rdfs:domain h:NormativeContent ;
+  rdfs:range h:Act ;
+  rdfs:comment "A content node may link more than one act. No functionality and no cardinality are stated, and a content node is not required."@en .
+
+h:hasPolarity a owl:ObjectProperty, owl:FunctionalProperty ;
+  rdfs:label "has polarity"@en ;
+  rdfs:domain h:NormativeContent ;
+  rdfs:range h:Polarity ;
+  rdfs:comment "Provisional. One NormativeContent individual has at most one distinct polarity. Two polarity IRIs without owl:differentFrom are identified. No polarity is required to exist. This does not identify positions or acts."@en .
+
+h:expressedBy a owl:ObjectProperty ;
+  rdfs:label "expressed by"@en ;
+  rdfs:domain h:FirstOrderPosition ;
+  rdfs:range h:NormativeStatement .
+
+h:correlatesWith a owl:ObjectProperty, owl:SymmetricProperty, owl:IrreflexiveProperty ;
+  rdfs:label "correlates with"@en ;
+  rdfs:domain h:FirstOrderPosition ;
+  rdfs:range h:FirstOrderPosition ;
+  owl:propertyDisjointWith h:oppositeOf ;
+  rdfs:comment "Type constraint on an existing correlative link. A missing link is consistent. The linked positions are not the same individual, and the classes are not equated."@en .
+
+h:oppositeOf a owl:ObjectProperty, owl:SymmetricProperty, owl:IrreflexiveProperty ;
+  rdfs:label "opposite of"@en ;
+  rdfs:domain h:FirstOrderPosition ;
+  rdfs:range h:FirstOrderPosition ;
+  rdfs:comment "Type constraint on an existing opposite link. Disjointness of the position classes is a separate axiom. Same parties, same act, and polarity are not checked by this property."@en .

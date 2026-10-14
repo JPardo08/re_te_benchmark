@@ -1,0 +1,12 @@
+# One content node links two acts that are declared distinct.
+# Functionality of hasAct was withdrawn. This file is not an OWL consistency proof.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+fx:act-signal a h:Act .
+fx:act-pause a h:Act ;
+  owl:differentFrom fx:act-signal .
+fx:content-signal a h:NormativeContent ;
+  h:hasAct fx:act-signal ;
+  h:hasAct fx:act-pause .

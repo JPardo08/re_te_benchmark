@@ -1,0 +1,7 @@
+# An existing correlative link whose filler has the wrong position class.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+
+fx:position-claim a h:Right ;
+  h:correlatesWith fx:position-liberty .
+fx:position-liberty a h:Privilege .

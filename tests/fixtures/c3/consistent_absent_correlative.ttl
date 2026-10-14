@@ -1,0 +1,9 @@
+# A typed position with no correlative link. Absence must stay consistent.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+
+fx:party-north a h:Party .
+fx:party-south a h:Party .
+fx:position-claim a h:Right ;
+  h:hasBearer fx:party-north ;
+  h:hasCounterpart fx:party-south .

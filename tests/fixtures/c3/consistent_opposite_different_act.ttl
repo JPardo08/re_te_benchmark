@@ -1,0 +1,18 @@
+# Opposite types with different acts and polarities. The type link is allowed.
+# The TBox does not compare act or polarity, so this fixture stays consistent.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+
+fx:act-signal a h:Act .
+fx:act-pause a h:Act .
+fx:content-do a h:NormativeContent ;
+  h:hasAct fx:act-signal ;
+  h:hasPolarity h:Performance .
+fx:content-omit a h:NormativeContent ;
+  h:hasAct fx:act-pause ;
+  h:hasPolarity h:Forbearance .
+fx:position-claim a h:Right ;
+  h:hasNormativeContent fx:content-do ;
+  h:oppositeOf fx:position-none .
+fx:position-none a h:NoRight ;
+  h:hasNormativeContent fx:content-omit .

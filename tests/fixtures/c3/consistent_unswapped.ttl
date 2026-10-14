@@ -1,0 +1,22 @@
+# Synthetic fixture. Parties and the act are invented. Bearer assignment is
+# deliberately not the correlative swap. That omission must not be a conflict.
+@prefix h: <urn:example:re-te-benchmark:c3:first-order-position:v1#> .
+@prefix fx: <urn:example:re-te-benchmark:c3:fixture#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+fx:party-north a h:Party .
+fx:party-south a h:Party .
+fx:party-north owl:differentFrom fx:party-south .
+fx:act-signal a h:Act .
+fx:content-signal a h:NormativeContent ;
+  h:hasAct fx:act-signal ;
+  h:hasPolarity h:Performance .
+fx:position-claim a h:Right ;
+  h:hasBearer fx:party-north ;
+  h:hasCounterpart fx:party-south ;
+  h:hasNormativeContent fx:content-signal ;
+  h:correlatesWith fx:position-burden .
+fx:position-burden a h:Duty ;
+  h:hasBearer fx:party-north ;
+  h:hasCounterpart fx:party-south ;
+  h:hasNormativeContent fx:content-signal .
