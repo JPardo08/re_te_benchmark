@@ -1,0 +1,348 @@
+{
+  "package_id": "C2_SCHEMA_V1",
+  "package_version": "1.0.0",
+  "condition_id": "C2",
+  "c1_label_schema": {
+    "path": "schemas/c1/hohfeld_labels.json",
+    "schema_id": "hohfeld_labels",
+    "version": "1.0.0",
+    "role": "The relation ids and their order are the C1 inventory. This package does not redefine that inventory."
+  },
+  "output_contract": {
+    "slots": [
+      "subject",
+      "relation",
+      "object"
+    ],
+    "note": "The output slots stay the textual triplet contract. They are not redefined as bearer and counterpart."
+  },
+  "normative_scope": {
+    "statement": "This descriptive schema covers only the four first-order Hohfeldian positions Duty, Right, Privilege, and NoRight, in that order. It does not add power, liability, immunity, or disability, and it does not import an external ontology.",
+    "sources": [
+      {
+        "id": "hohfeld_1913",
+        "role": "conceptual_authority",
+        "citation": "Hohfeld, W. N. (1913). Some Fundamental Legal Conceptions as Applied in Judicial Reasoning. Yale Law Journal, 23(1), 16-59. https://doi.org/10.2307/785533"
+      },
+      {
+        "id": "martin_chozas_revenko_2021",
+        "role": "four_label_scope",
+        "citation": "Martín-Chozas, P., & Revenko, A. (2021). Thesaurus Enhanced Extraction of Hohfeld's Relations from Spanish Labour Law. CEUR Workshop Proceedings, 2918, 30-38. https://ceur-ws.org/Vol-2918/paper4.pdf"
+      },
+      {
+        "id": "revenko_martin_chozas_2022",
+        "role": "project_publication",
+        "citation": "Revenko, A., & Martín Chozas, P. (2022). Extraction and semantic representation of domain-Specific relations in Spanish labour law. Procesamiento de Lenguaje Natural, 69, 105-116. https://doi.org/10.26342/2022-69-9"
+      }
+    ]
+  },
+  "action_polarity": {
+    "statement": "A privilege to perform an act is the opposite of a duty to refrain from that act, and a privilege to refrain is the opposite of a duty to perform it.",
+    "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+    "sources": [
+      "hohfeld_1913"
+    ]
+  },
+  "relations": [
+    {
+      "id": "Duty",
+      "legal_name": "Duty",
+      "definition": "A duty is a directed legal position in which one party is required, toward another party, to perform or to refrain from a specified act.",
+      "relational_semantics": "A duty is owed by one party to another. It is correlative to the other party's claim-right and opposite to a privilege over the same act only when the action polarity is preserved. A duty in this square is not automatically every obligation represented by an external ontology, because those classes need not encode the correlative party.",
+      "correlative": {
+        "id": "Right",
+        "statement": "The correlative of a duty borne by one party toward another is the claim-right of that other party against the duty-bearer, over the same normative content. That correlative is not the same position with its textual arguments exchanged."
+      },
+      "opposite": {
+        "id": "Privilege",
+        "statement": "The opposite of a duty to perform an act, relative to the same counterpart, is a privilege not to perform it. The opposite of a duty to refrain is a privilege to act."
+      },
+      "direction": {
+        "statement": "The duty runs from the party who bears it to the party toward whom it is owed. This package does not identify the bearer with the first textual argument or the addressee with the second."
+      },
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+      "sources": [
+        "hohfeld_1913"
+      ]
+    },
+    {
+      "id": "Right",
+      "legal_name": "Right (claim-right)",
+      "definition": "Within this four-position square, a right is a claim-right: a directed position in which one party is entitled to another party's performance or forbearance.",
+      "relational_semantics": "The claim-right correlates with the other party's duty and is opposite to a no-right. It is not a liberty to act, not a legal power, and not an administrative authorization.",
+      "correlative": {
+        "id": "Duty",
+        "statement": "The correlative of one party's claim-right against another is that other party's duty toward the claim-holder, over the same normative content. That correlative is not the claim-right with its textual arguments exchanged."
+      },
+      "opposite": {
+        "id": "NoRight",
+        "statement": "The opposite of a claim-right is a no-right over the same act and the same parties. That opposite is the absence of the claim, not a prohibition imposed on either party."
+      },
+      "direction": {
+        "statement": "The claim-right runs from the party who holds the claim to the party against whom it is held. This package does not identify the holder with the first textual argument."
+      },
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+      "sources": [
+        "hohfeld_1913"
+      ]
+    },
+    {
+      "id": "Privilege",
+      "legal_name": "Privilege (liberty)",
+      "definition": "A privilege, also called a liberty, is a directed position of one party toward another party. A privilege to perform a specified act is the absence of a duty, toward that other party, to refrain from that act. A privilege to refrain from a specified act is the absence of a duty, toward that other party, to perform it. These are alternative privileges; one privilege does not remove both duties at once.",
+      "relational_semantics": "A privilege to act negates a duty to refrain from that act. It does not negate a duty to perform the same act, and it does not give the privilege-holder a claim that the other party must act. A privilege is not a permission understood only as an authorization granted by a competent authority.",
+      "correlative": {
+        "id": "NoRight",
+        "statement": "The correlative of a privilege is the other party's no-right: that other party has no claim that the privileged party perform or refrain from the act. That correlative is not the privilege with its textual arguments exchanged."
+      },
+      "opposite": {
+        "id": "Duty",
+        "statement": "The opposite of a privilege to act is a duty to refrain from that act, relative to the same counterpart. The opposite of a privilege to refrain is a duty to act."
+      },
+      "direction": {
+        "statement": "The privilege is held by one party as against another party. This package does not map the privilege-holder onto the first textual argument."
+      },
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+      "sources": [
+        "hohfeld_1913"
+      ]
+    },
+    {
+      "id": "NoRight",
+      "legal_name": "No-right",
+      "definition": "A no-right is the absence of a claim-right: one party has no claim against another party that the latter perform or refrain from a specified act.",
+      "relational_semantics": "A no-right correlates with the other party's privilege and is opposite to a claim-right. It is not a prohibition directed at either party, and it is not itself a duty.",
+      "correlative": {
+        "id": "Privilege",
+        "statement": "The correlative of one party's no-right against another is that other party's privilege as against the first, over the same act. That correlative is not the no-right with its textual arguments exchanged."
+      },
+      "opposite": {
+        "id": "Right",
+        "statement": "The opposite of a no-right is the corresponding claim-right. Opposition does not turn the no-right into a prohibition."
+      },
+      "direction": {
+        "statement": "The no-right belongs to the party who lacks the claim and is directed toward the party who holds the correlative privilege. This package does not identify those parties with the two textual arguments."
+      },
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+      "sources": [
+        "hohfeld_1913"
+      ]
+    }
+  ],
+  "entity_types": [
+    {
+      "id": "LegalAgent",
+      "definition_status": "UNRESOLVED_DEFINITION",
+      "definition": null,
+      "include_in_payload": false,
+      "unresolved_reason": "The identifier is stable in the annotation schema, but the 2021 examples, the 2023 thesis glosses, and the 2026 author reply do not yield one definition. The reply uses a person/entity/object gloss and also attributes the types to legal models that do not define these three classes. An external ontology class of the same name denotes the party bearing a deontic modality and is not this annotation type."
+    },
+    {
+      "id": "LegalEntity",
+      "definition_status": "UNRESOLVED_DEFINITION",
+      "definition": null,
+      "include_in_payload": false,
+      "unresolved_reason": "No single published definition distinguishes this annotation type from LegalAgent and LegalConcept across the 2021, 2022, and 2023 sources. The 2026 author gloss is recorded and not adopted."
+    },
+    {
+      "id": "LegalConcept",
+      "definition_status": "UNRESOLVED_DEFINITION",
+      "definition": null,
+      "include_in_payload": false,
+      "unresolved_reason": "The identifier is retained. Treating it as a residual class, as an object, or as the normative complement would choose among conflicting sources. No definition is supplied to the extractor."
+    }
+  ],
+  "abstract_roles": {
+    "bearer": {
+      "statement": "The bearer is the party who holds the Hohfeldian position.",
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+      "sources": [
+        "hohfeld_1913"
+      ]
+    },
+    "counterpart": {
+      "statement": "The counterpart is the other party in the same directed relation.",
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+      "sources": [
+        "hohfeld_1913"
+      ]
+    },
+    "normative_content": {
+      "statement": "The normative content is the act, forbearance, or other complement that the position concerns. It is not itself one of the two parties.",
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE",
+      "sources": [
+        "hohfeld_1913",
+        "revenko_martin_chozas_2022"
+      ]
+    },
+    "textual_arguments": {
+      "statement": "The constructs e1 and e2 are the first and second textual arguments of an annotated triplet. The output slots subject and object name those textual positions in the evaluation contract. Neither pair is defined as bearer and counterpart, and neither pair is defined as the agent and the patient of an action.",
+      "payload_statement": "The output slots subject and object are textual positions. They are not defined as the bearer and the counterpart, and they are not defined as the agent and the patient of an action.",
+      "verification_status": "BOUNDARY_ONLY",
+      "mapping_status": "UNRESOLVED",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "This record states the extractor contract and the unresolved mapping between textual slots and legal roles. It is methodological metadata, not Hohfeldian relation knowledge, so it is not projected.",
+      "sources": [
+        "revenko_martin_chozas_2022",
+        "author_martin_chozas_2026_10_13"
+      ],
+      "not_adopted": "A 2022 linguistic reading treats the subject as the agent who performs an action and the object as the patient who receives it. A later thesis reading identifies bearer, counterpart, and object with subject, object, and complement. The 2026 author reply confirms that the triplets are directional and does not state that e1 is the bearer. None of these readings is frozen as an argument mapping."
+    }
+  },
+  "annotation_constructs": [
+    {
+      "id": "e1",
+      "annotation_semantics": "First textual argument of the annotated relation.",
+      "inference_applicability": "The construct identifies a span in the annotation schema. It does not by itself state which Hohfeldian role that span plays.",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "The annotation tag is not an extractor field. The textual-argument record stays in the package as methodological metadata and is not projected.",
+      "verification_status": "IDENTIFIER_ONLY"
+    },
+    {
+      "id": "e2",
+      "annotation_semantics": "Second textual argument of the annotated relation.",
+      "inference_applicability": "The construct identifies a span in the annotation schema. It does not by itself state which Hohfeldian role that span plays.",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "The annotation tag is not an extractor field. The textual-argument record stays in the package as methodological metadata and is not projected.",
+      "verification_status": "IDENTIFIER_ONLY"
+    },
+    {
+      "id": "rel",
+      "annotation_semantics": "Span of the relational expression to which a relation label is assigned.",
+      "inference_applicability": "The relation label is already supplied by the C1 inventory. The annotation span is not an additional output field.",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "The output contract already has one relation slot. The annotation tag is not a new instruction.",
+      "verification_status": "IDENTIFIER_ONLY"
+    },
+    {
+      "id": "comp",
+      "annotation_semantics": "Complement of the relational expression: content that the relation is about, rather than one of the two parties.",
+      "inference_applicability": "The complement may be described to the extractor as normative content. Concrete complement strings from the annotations are not conditioning.",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "The Hohfeldian content of a complement is already stated as normative content. The tag name, the output-slot prohibition, and the ban on copying annotated strings are annotation metadata or common-shell instructions, so they are not projected.",
+      "payload_statement": "A complement is content of the relational expression, such as the act or item the relation is about. It is not a third party and it is not an additional output slot. Do not reproduce complement strings from annotated examples.",
+      "verification_status": "PUBLISHED_AND_AUTHOR_CONFIRMED",
+      "sources": [
+        "revenko_martin_chozas_2022",
+        "author_martin_chozas_2026_10_13"
+      ]
+    },
+    {
+      "id": "mod",
+      "annotation_semantics": "A modifier attached to a relational expression.",
+      "inference_applicability": "A modifier may change how the relational expression is interpreted. That fact is not a deterministic negation or label-inversion rule.",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "The author-confirmed effect of the annotation tag is retained here. Projecting it would add a negation-behavior instruction, and the extractor input does not contain the tag.",
+      "payload_statement": "A modifier may change the semantic interpretation of the relational expression. Do not apply a fixed rule that negates the expression or inverts its relation label merely because a modifier is present.",
+      "verification_status": "AUTHOR_CONFIRMED",
+      "sources": [
+        "author_martin_chozas_2026_10_13"
+      ],
+      "not_adopted": "The author reply is hedged and illustrates a possible contrary reading with an annotated sentence. The sentence is not stored. The contrary-reading hypothesis is not adopted as an inversion rule."
+    },
+    {
+      "id": "MissingE1",
+      "annotation_semantics": "The first textual argument is absent from the annotated example.",
+      "inference_applicability": "The construct records absence. It does not supply a filler and it does not authorize reconstructing one.",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "MissingE1 records absence in an annotated example. The extractor receives source text without that marker. The instruction not to invent a filler belongs to the future common shell.",
+      "payload_statement": "MissingE1 means that the first textual argument is absent from the annotated example. Do not invent a party or any other filler for that argument.",
+      "verification_status": "AUTHOR_CONFIRMED",
+      "sources": [
+        "author_martin_chozas_2026_10_13"
+      ]
+    },
+    {
+      "id": "MissingE2",
+      "annotation_semantics": "The second textual argument is absent from the annotated example.",
+      "inference_applicability": "The construct records absence. It does not supply a filler and it does not authorize reconstructing one.",
+      "include_in_payload": false,
+      "payload_exclusion_reason": "MissingE2 records absence in an annotated example. The extractor receives source text without that marker. The instruction not to invent a filler belongs to the future common shell.",
+      "payload_statement": "MissingE2 means that the second textual argument is absent from the annotated example. Do not invent a party or any other filler for that argument.",
+      "verification_status": "AUTHOR_CONFIRMED",
+      "sources": [
+        "author_martin_chozas_2026_10_13"
+      ]
+    }
+  ],
+  "extraction_boundaries": [
+    "This descriptive schema supplies no annotation entity-type definitions and no domain or range constraints on those annotation types. The sentence does not deny OWL domains of abstract properties in a later formal projection, and it is not sent to the extractor."
+  ],
+  "exclusions": [
+    {
+      "id": "gold_examples",
+      "reason": "Annotated examples, including examples quoted in author correspondence, are evaluation material and are not conditioning."
+    },
+    {
+      "id": "silver_examples",
+      "reason": "Silver annotations are model-dependent and are excluded from the main conditions."
+    },
+    {
+      "id": "gold_signatures_as_axioms",
+      "reason": "Type combinations observed in the reference annotations are not closed-world constraints."
+    },
+    {
+      "id": "unverified_domain_range",
+      "reason": "A 2021 paper claims a manual domain and range table for annotation entity types, but no such table is present in the audited sources. The author does not recall one. Those annotation-type constraints are not supplied. This exclusion does not deny OWL domains of abstract properties."
+    },
+    {
+      "id": "brat_grids",
+      "reason": "The annotation configuration permits every type combination for every label. That grid is an annotation convention, not an axiom."
+    },
+    {
+      "id": "right_sample",
+      "reason": "The sample ontology file in the historical relation repository contains statute content and is excluded."
+    },
+    {
+      "id": "external_ontology_import",
+      "reason": "NORMA-O, the Provision Model, and LegalRuleML are not imported. Partial alignments are reserved for a later formal condition and are not equivalences."
+    },
+    {
+      "id": "prediction_vocabularies",
+      "reason": "Relation labels or aliases induced from model predictions are not conditioning."
+    },
+    {
+      "id": "few_shot_examples",
+      "reason": "No few-shot examples are part of this package."
+    },
+    {
+      "id": "gold_frequencies",
+      "reason": "Label and type frequencies in the reference set are leakage, not schema knowledge."
+    },
+    {
+      "id": "annotation_marker_instructions",
+      "reason": "e1, e2, rel, comp, mod, MissingE1, and MissingE2 document the historical annotation schema. The extractor input is source text and does not contain those markers. Their records stay in this package and are not projected."
+    },
+    {
+      "id": "common_instruction_shell",
+      "reason": "The common instruction shell is a separate contract shared by C0, C1, C2, C3, and C3-NL. It is not C2 schema knowledge and is not projected into the C2 payload."
+    },
+    {
+      "id": "annotation_type_domain_range_boundary",
+      "reason": "The extraction boundary says that annotation entity types have no domain or range constraints. It stays in the package and is not projected, so it is not read as a denial of OWL property domains."
+    },
+    {
+      "id": "textual_argument_contract",
+      "reason": "The textual-argument record states the extractor contract and the unresolved mapping to legal roles. It stays in the package and is not projected as relation knowledge."
+    }
+  ],
+  "provenance_notes": [
+    {
+      "id": "author_martin_chozas_2026_10_13",
+      "source_class": "AUTHOR_STATEMENT",
+      "statement": "Patricia Martín-Chozas confirmed that the triplets are directional, that comp is a complement of the relational expression, that a modifier can change its interpretation, and that MissingE1 and MissingE2 mark an argument absent from the example. The reply does not equate e1 with bearer. Its entity-type gloss is not adopted. Concrete examples from the reply are not stored in this package.",
+      "verification_status": "AUTHOR_CONFIRMED"
+    },
+    {
+      "id": "privilege_polarity_c3_2c",
+      "source_class": "SECONDARY_CONTRAST",
+      "statement": "C3.2c replaces the Privilege definition that could be read as the simultaneous absence of a duty to perform and a duty to refrain. A privilege to perform is the absence of a duty to refrain from that act. A privilege to refrain is the absence of a duty to perform it. The contrast is the Spring 2022 Stanford Encyclopedia of Philosophy entry on rights, used to check polarity and not copied as wording. The four labels and the Duty, Right, and NoRight definitions stay unchanged, as do action polarity, correlatives, and opposites.",
+      "verification_status": "PARAPHRASE_OF_PRIMARY_SOURCE"
+    }
+  ],
+  "integrity": {
+    "canonicalization": "json.dumps ensure_ascii=false indent=2 trailing-newline",
+    "content_sha256": "037ab7bcf9691310f5a56a1bb7c635f6c230bdc270d37d5cc9578c88afb76d24",
+    "payload_sha256": "314a220d1916c260ff6f94c731225c43a39fa8136719794586298d47fdbe57fc"
+  }
+}
