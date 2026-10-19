@@ -121,8 +121,9 @@ semantic coverage is not complete, and C3 is not implemented. The C2.2
 projection review keeps correlatives, opposites, and action polarity in the
 model-facing payload, and withholds annotation-tag instructions and general
 output or non-invention instructions. Those remain in the package. The common
-instruction shell is `common-instruction-shell-v1` and is not part of this
-package. C3.2c records a Privilege wording change: a privilege to perform is
+instruction shell is not part of this package. At this decision the recorded
+shell identity was `common-instruction-shell-v1`. The current renderer is
+`common-instruction-shell-v2`; v1 remains recorded and is not sent to a model. C3.2c records a Privilege wording change: a privilege to perform is
 the absence of a duty to refrain, and a privilege to refrain is the absence of
 a duty to perform. The previous wording could be read as both absences at
 once. NORMA-O and the

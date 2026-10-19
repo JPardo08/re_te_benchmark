@@ -14,8 +14,10 @@ from re_te_benchmark.conditioning.c3 import (
 )
 from re_te_benchmark.conditioning.shell import (
     CONDITIONS,
+    PREVIOUS_SHELL_ID,
     SHELL_ID,
     conditioning_for,
+    previous_shell_template,
     render_condition,
     render_instruction,
     shell_template,
@@ -23,6 +25,7 @@ from re_te_benchmark.conditioning.shell import (
 
 __all__ = [
     "CONDITIONS",
+    "PREVIOUS_SHELL_ID",
     "SHELL_ID",
     "c3_model_payload",
     "c3_nl_model_payload",
@@ -31,6 +34,7 @@ __all__ = [
     "load_c2_package",
     "load_c3_package",
     "model_payload",
+    "previous_shell_template",
     "render_condition",
     "render_instruction",
     "shell_template",

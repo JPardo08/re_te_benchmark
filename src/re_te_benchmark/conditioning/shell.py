@@ -11,11 +11,20 @@ from re_te_benchmark.conditioning.c2 import canonical_dumps, load_c1_labels, mod
 from re_te_benchmark.conditioning.c3 import c3_model_payload, c3_nl_model_payload
 
 
-SHELL_ID = "common-instruction-shell-v1"
+SHELL_ID = "common-instruction-shell-v2"
+PREVIOUS_SHELL_ID = "common-instruction-shell-v1"
 CONDITIONS = ("C0", "C1", "C2", "C3", "C3-NL")
 _CONDITIONING_MARK = "[[CONDITIONING]]"
 _TEXT_MARK = "[[TEXT]]"
-_TEMPLATE = """\
+_RELATION_LINE = (
+    "If the input text states more than one relation, write one line for each "
+    "relation, in the order in which the text states them.\n"
+)
+_OBJECT_LINE = (
+    "If one stated relation has more than one object, write one separate line "
+    "for each object. Repeat the subject and the relation on each of those lines.\n"
+)
+_TEMPLATE_V1 = """\
 Task: extract each directed relation that the input text states.
 
 Write one relation per line. Each line contains exactly three fields separated by one tab, in this order: subject, relation, object.
@@ -35,11 +44,19 @@ Input text:
 [[TEXT]]
 Relations:
 """
+if _TEMPLATE_V1.count(_RELATION_LINE) != 1:
+    raise RuntimeError("The v1 shell lost its relation-line anchor.")
+_TEMPLATE = _TEMPLATE_V1.replace(_RELATION_LINE, _RELATION_LINE + _OBJECT_LINE, 1)
 
 
 def shell_template() -> str:
-    """Return the fixed instruction text, including the two slot marks."""
+    """Return the current instruction text, including the two slot marks."""
     return _TEMPLATE
+
+
+def previous_shell_template() -> str:
+    """Return the v1 instruction text. It is not the rendered shell."""
+    return _TEMPLATE_V1
 
 
 def render_instruction(conditioning: str, text: str) -> str:

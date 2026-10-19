@@ -17,8 +17,10 @@ sys.path.insert(0, str(PROJECT_ROOT / "src"))
 from re_te_benchmark.conditioning.c2 import load_c1_labels  # noqa: E402
 from re_te_benchmark.conditioning.shell import (  # noqa: E402
     CONDITIONS,
+    PREVIOUS_SHELL_ID,
     SHELL_ID,
     conditioning_for,
+    previous_shell_template,
     render_condition,
     render_instruction,
     shell_template,
@@ -26,6 +28,16 @@ from re_te_benchmark.conditioning.shell import (  # noqa: E402
 
 
 TEXT = "The company pays the worker."
+TWO_OBJECTS = "Alpha supplies Beta and Alpha supplies Gamma."
+REPEATED = "Alpha supplies Beta. Alpha supplies Beta."
+OBJECT_LINE = (
+    "If one stated relation has more than one object, write one separate line "
+    "for each object. Repeat the subject and the relation on each of those lines."
+)
+RELATION_LINE = (
+    "If the input text states more than one relation, write one line for each "
+    "relation, in the order in which the text states them."
+)
 LABELS = ("Duty", "Right", "Privilege", "NoRight")
 LEAKS = (
     "Hohfeld",
@@ -46,7 +58,9 @@ LEAKS = (
 class InstructionShellTests(unittest.TestCase):
     def test_template_is_stable_and_has_one_conditioning_slot(self) -> None:
         template = shell_template()
-        self.assertEqual(SHELL_ID, "common-instruction-shell-v1")
+        self.assertEqual(SHELL_ID, "common-instruction-shell-v2")
+        self.assertEqual(PREVIOUS_SHELL_ID, "common-instruction-shell-v1")
+        self.assertNotEqual(SHELL_ID, PREVIOUS_SHELL_ID)
         self.assertEqual(template.count("[[CONDITIONING]]"), 1)
         self.assertEqual(template.count("[[TEXT]]"), 1)
         self.assertIn("subject, relation, object", template)
@@ -101,6 +115,39 @@ class InstructionShellTests(unittest.TestCase):
         self.assertEqual(package["artifact_role"], "TBOX_ONLY")
         self.assertIn("Performance", package["artifact_role_note"])
         self.assertIn("no individual derived from a corpus", package["artifact_role_note"])
+        self.assertEqual(manifest["conditions"]["C2"]["readiness"], "PARTIAL")
+
+    def test_v2_adds_only_the_multi_object_sentence(self) -> None:
+        current = shell_template()
+        previous = previous_shell_template()
+        self.assertNotIn(OBJECT_LINE, previous)
+        self.assertEqual(current.count(OBJECT_LINE), 1)
+        self.assertIn(RELATION_LINE + "\n" + OBJECT_LINE + "\n", current)
+        self.assertEqual(
+            current,
+            previous.replace(RELATION_LINE + "\n", RELATION_LINE + "\n" + OBJECT_LINE + "\n", 1),
+        )
+        for marker in (*LABELS, *LEAKS, "articulo_"):
+            self.assertNotIn(marker, current)
+            self.assertNotIn(marker, OBJECT_LINE)
+
+    def test_five_conditions_share_v2_for_two_objects_and_repeats(self) -> None:
+        for text in (TWO_OBJECTS, REPEATED):
+            bodies = []
+            for condition in CONDITIONS:
+                slot = conditioning_for(condition)
+                rendered = render_condition(condition, text)
+                self.assertIn(OBJECT_LINE, rendered)
+                self.assertEqual(rendered.count(text), 1)
+                self.assertNotIn(OBJECT_LINE, slot)
+                self.assertNotIn(text, slot)
+                if slot:
+                    bodies.append(rendered.replace(slot, "[[SLOT]]", 1))
+                else:
+                    bodies.append(
+                        rendered.replace("\n\nInput text:\n", "\n[[SLOT]]\nInput text:\n", 1)
+                    )
+            self.assertEqual(len(set(bodies)), 1)
 
 
 if __name__ == "__main__":

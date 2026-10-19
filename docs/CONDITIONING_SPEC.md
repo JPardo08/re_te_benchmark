@@ -320,17 +320,22 @@ individual` instead of `filler`. Domain and range sentences are unchanged.
 link exist; the sentences do not say that, and a broader rewrite is not made
 here. The canonical JSON lengths at the C3.2c revision are 5672 characters for C2, 9140 for the OWL projection payload, and 12778 for the natural-language control.
 
-`common-instruction-shell-v1` is implemented in
-`src/re_te_benchmark/conditioning/shell.py`. The instruction text is the same
-for C0, C1, C2, C3, and C3-NL. The only condition variable is the
+`common-instruction-shell-v2` is the renderer implemented in
+`src/re_te_benchmark/conditioning/shell.py`. `common-instruction-shell-v1`
+remains available as `previous_shell_template()` and is not the text sent to a
+model. Version 2 adds one sentence to the shared instruction: if one stated
+relation has more than one object, write one separate line for each object and
+repeat the subject and the relation. The instruction text is otherwise the
+same for C0, C1, C2, C3, and C3-NL. The only condition variable is the
 target-schema conditioning slot. C0 leaves that slot empty. C1 places the four
 labels there, without the C1 provenance record. C2, C3, and C3-NL place the
 existing canonical payloads there. The shell does not name the four labels,
 does not reuse Pythia `basic-v1` or GoLLIE `gollie-prompt-v1`, and does not
 tell the model how to map `e1` or `e2`.
 
-The requested output is one tab-separated line per relation, with the fields
-`subject`, `relation`, and `object`. Those are the three fields of
+The requested output is one tab-separated line per object occurrence, with the
+fields `subject`, `relation`, and `object`. A relation with two stated objects
+is two lines. Those are the three fields of
 `ParsedTriple` and of the evaluation export. The shell does not invent a JSON
 schema. It is not Turtle, because a Turtle predicate must be an IRI and C0
 must be able to emit an open relation name. No parser in `re_te_system`
@@ -498,8 +503,9 @@ must be separate artifacts and must identify the frozen specification version.
 `C2_SCHEMA_V1` identifies that version in the knowledge package and in its
 integrity hashes. The model-facing projection does not repeat the package
 identity, the shared output contract, or historical annotation-tag instructions.
-Those instructions belong to `common-instruction-shell-v1`, which is not
-part of the C2 payload. `C3_ONTOLOGY_V1` does not change
+Those instructions belong to the common instruction shell, which is not
+part of the C2 payload. The current renderer is `common-instruction-shell-v2`.
+The v1 identifier remains recorded and is not a second conditioning payload. `C3_ONTOLOGY_V1` does not change
 `schemas/conditioning_conditions.json`: condition boundaries, readiness, and
 the unresolved experimental gaps stay as in schema version `1.1.0`. The TBox
 package has its own integrity hashes and pins the C2 hashes.
